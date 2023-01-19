@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302d2e9265649a242bc9f5b6e5fd4640, type: 3}
+  m_Name: 40
+  m_EditorClassIdentifier: 
+  cardName: Merchant Buccaneer
+  cardType: 0
+  rarity: 0
+  image: {fileID: 21300000, guid: dac9adea24cfd7c44bff23f58b012caf, type: 3}
+  cost: 2
+  atk: 2
+  maxBananas: 3
+  clock: 0
+  health: 0
+  bonusDesc: 
+  splashText: Despite allegations of an illegal helium ring out of the Bonoborbados,
+    the MIB claims that theese boats generate revenue by shipping bananas
+  keywordsDesc:
+  - Interest 1
+  - Watercraft

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302d2e9265649a242bc9f5b6e5fd4640, type: 3}
+  m_Name: 32
+  m_EditorClassIdentifier: 
+  cardName: Razor Rotor Heli
+  cardType: 0
+  rarity: 1
+  image: {fileID: 21300000, guid: 65134e9b9de05f34993084a4f3031334, type: 3}
+  cost: 3
+  atk: 2
+  maxBananas: 2
+  clock: 0
+  health: 0
+  bonusDesc: 
+  splashText: 'As if helicopter blades
+
+    couldn''t already cut
+
+    through the
+    air...'
+  keywordsDesc:
+  - LPP
+  - Hover
