@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class CardCtrl : MonoBehaviour
 {
-    public CardSO cardOg;
+    public CardSO cardOg; public HandScript handOwner;
     bool infoSet=false;
-    public bool ableToBeSelected=false;
+    public bool ableToBeSelected=false, upsideDown;
     public int cost, maxHp, atk, clock, hp, banana;
     [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT;
-    [SerializeField] GameObject atkI, bananaI, clockI, hpI, a2BScolor;
+    [SerializeField] GameObject atkI, bananaI, clockI, hpI, a2BScolor, cardBack;
     [SerializeField] Image bgImage, cardImage, rarityImage;
     [SerializeField] Color colorCommon, colorRare, colorEpic, colorLegendary, catPrimary, catMilitary, catSupport, catMagic, bloons, tSupport, bSupport, hero;
 
@@ -27,9 +27,13 @@ public class CardCtrl : MonoBehaviour
         if(banana==0) bananaI.SetActive(false);
         if(clock==0) clockI.SetActive(false);
         if(hp==0) hpI.SetActive(false);
+
+        cardBack.SetActive(upsideDown);
     }
 
-    public void SetCardData(){
+    public void SetCardData(HandScript hO, bool spawnUD){
+        upsideDown = spawnUD;
+        handOwner=hO;
         nameT.text=cardOg.cardName;
         splashT.text=cardOg.splashText;
         cardImage.sprite=cardOg.image;
@@ -119,6 +123,8 @@ public class CardCtrl : MonoBehaviour
         if(banana==0) bananaI.SetActive(false);
         if(clock==0) clockI.SetActive(false);
         if(hp==0) hpI.SetActive(false);
+
+        cardBack.SetActive(upsideDown);
     }
 
     public void Selected(){
