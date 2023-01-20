@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Grow Blocker
   cardType: 0
   rarity: 1
+  specificType: 3
   image: {fileID: 21300000, guid: 9999dd72e54cb2e4fb959ec2793e9af0, type: 3}
   cost: 2
   atk: -1

@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Storm Druid
   cardType: 0
   rarity: 1
+  specificType: 2
   image: {fileID: 21300000, guid: 302837835f4607c4fa05225d792d37a5, type: 3}
   cost: 4
   atk: 2

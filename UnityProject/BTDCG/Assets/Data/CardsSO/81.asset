@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Engineer Monke
   cardType: 0
   rarity: 0
+  specificType: 3
   image: {fileID: 21300000, guid: 7b679e7a81b279442b2e86ad2a47d3e9, type: 3}
   cost: 2
   atk: 1

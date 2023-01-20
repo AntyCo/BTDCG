@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Fortified Moab
   cardType: 1
   rarity: 2
+  specificType: 4
   image: {fileID: 21300000, guid: 0712aa03a3ee5e241965ef96bc7d8d74, type: 3}
   cost: 7
   atk: 0

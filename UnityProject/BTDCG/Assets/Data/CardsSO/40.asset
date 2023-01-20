@@ -15,6 +15,7 @@ MonoBehaviour:
   cardName: Merchant Buccaneer
   cardType: 0
   rarity: 0
+  specificType: 1
   image: {fileID: 21300000, guid: dac9adea24cfd7c44bff23f58b012caf, type: 3}
   cost: 2
   atk: 2

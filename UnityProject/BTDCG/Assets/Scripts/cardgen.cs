@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class cardgen : MonoBehaviour
+public class CardGen : MonoBehaviour
 {
     //float reload, maxReload=0.5f;
     [SerializeField] GameObject cardP;
+    [SerializeField] Transform pHand;
     public List<CardSO> possibleCards;
-    [SerializeField] Color colorCommon, colorRare, colorEpic, colorLegendary;
 
     /*void Update()
     {
@@ -66,11 +66,12 @@ public class cardgen : MonoBehaviour
         }
     }*/
     public void generateCard(){
-        GameObject createdCard = (GameObject)Instantiate(cardP, new Vector2(0,0), Quaternion.Euler(0, 0, 0), this.transform);
+        GameObject createdCard = (GameObject)Instantiate(cardP, this.transform.position, Quaternion.Euler(0, 0, 0), pHand);
+        createdCard.transform.localScale=new Vector3(.5f, .5f, .5f);
         //CardSO selectedCard = possibleCards[Random.Range(0, possibleCards.Count)];
 
-        createdCard.GetComponent<cardCtrl>().cardOg = possibleCards[3];
-        createdCard.GetComponent<cardCtrl>().infoSet = true;
+        createdCard.GetComponent<CardCtrl>().cardOg = possibleCards[Random.Range(0, possibleCards.Count)];
+        createdCard.GetComponent<CardCtrl>().SetCardData();
 
         /*card.atkT.text=selectedCard.atk+"";
         card.bananaT.text=selectedCard.maxBananas+"";
