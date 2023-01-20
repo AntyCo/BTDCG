@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class HandScript : MonoBehaviour
 {
-    public List<CardSO> deck, bloonDeck, discard, bloonDiscard;
+    public List<CardSO> deck, bloonDeck, discard, bloonDiscard, cardsInHand;
+    [SerializeField] RectTransform rT;
+
+    void Update(){
+        if((Input.mousePosition.y/Screen.height*1080)<rT.anchoredPosition.y+200)
+            rT.anchoredPosition=new Vector2(0, 200);
+        else
+            rT.anchoredPosition=new Vector2(0, -100);
+    }
 }

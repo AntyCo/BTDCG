@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardCtrl : MonoBehaviour
 {
-    public CardSO cardOg;
+    public CardSO cardOg; public HandScript handOwner;
     bool infoSet=false;
     public bool ableToBeSelected=false;
     public int cost, maxHp, atk, clock, hp, banana;
@@ -29,7 +29,8 @@ public class CardCtrl : MonoBehaviour
         if(hp==0) hpI.SetActive(false);
     }
 
-    public void SetCardData(){
+    public void SetCardData(HandScript hO){
+        handOwner=hO;
         nameT.text=cardOg.cardName;
         splashT.text=cardOg.splashText;
         cardImage.sprite=cardOg.image;
