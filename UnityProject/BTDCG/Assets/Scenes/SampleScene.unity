@@ -621,6 +621,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: afa9a040ecf52254fb06c40cc52ec953, type: 2}
   - {fileID: 11400000, guid: 653707902faf1f445be3f97282b5a46e, type: 2}
   - {fileID: 11400000, guid: 22e8f86aed9be8541b2e9b0c21069340, type: 2}
+  playersHand: {fileID: 1364810950}
 --- !u!1 &1220959207
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +713,7 @@ GameObject:
   - component: {fileID: 1364810949}
   - component: {fileID: 1364810948}
   - component: {fileID: 1364810947}
+  - component: {fileID: 1364810950}
   m_Layer: 5
   m_Name: Player's Hand
   m_TagString: Untagged
@@ -777,14 +779,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.12156863}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 0
@@ -802,6 +804,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364810945}
   m_CullTransparentMesh: 1
+--- !u!114 &1364810950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364810945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec44b9b84fd5e1419847b7a2b60d816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck:
+  - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
+  - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
+  - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
+  - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
+  - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
+  - {fileID: 11400000, guid: f12c00c0d1ef9f945a834f0afc3b3852, type: 2}
+  - {fileID: 11400000, guid: f12c00c0d1ef9f945a834f0afc3b3852, type: 2}
+  - {fileID: 11400000, guid: f12c00c0d1ef9f945a834f0afc3b3852, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
+  - {fileID: 11400000, guid: 4eaeb92da6fd9eb45b87426570f07f7b, type: 2}
+  - {fileID: 11400000, guid: 4eaeb92da6fd9eb45b87426570f07f7b, type: 2}
+  - {fileID: 11400000, guid: 4eaeb92da6fd9eb45b87426570f07f7b, type: 2}
+  - {fileID: 11400000, guid: 4eaeb92da6fd9eb45b87426570f07f7b, type: 2}
+  - {fileID: 11400000, guid: 4eaeb92da6fd9eb45b87426570f07f7b, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: fc771f70f1554804aad0182584ee5a97, type: 2}
+  - {fileID: 11400000, guid: 840bd6916fd77ea4ca42a13b7331b7de, type: 2}
+  - {fileID: 11400000, guid: 840bd6916fd77ea4ca42a13b7331b7de, type: 2}
+  - {fileID: 11400000, guid: 840bd6916fd77ea4ca42a13b7331b7de, type: 2}
+  bloonDeck:
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  - {fileID: 11400000, guid: 43c6ac6970bedd64ea06bbedaa166317, type: 2}
+  discard: []
+  bloonDiscard: []
 --- !u!1 &1428070387
 GameObject:
   m_ObjectHideFlags: 0

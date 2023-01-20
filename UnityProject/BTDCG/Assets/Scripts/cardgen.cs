@@ -9,6 +9,7 @@ public class CardGen : MonoBehaviour
     [SerializeField] GameObject cardP;
     [SerializeField] Transform pHand;
     public List<CardSO> possibleCards;
+    public HandScript playersHand;
 
     /*void Update()
     {
@@ -66,11 +67,14 @@ public class CardGen : MonoBehaviour
         }
     }*/
     public void generateCard(){
+        if(playersHand.deck.Count==0) return;
         GameObject createdCard = (GameObject)Instantiate(cardP, this.transform.position, Quaternion.Euler(0, 0, 0), pHand);
         createdCard.transform.localScale=new Vector3(.5f, .5f, .5f);
         //CardSO selectedCard = possibleCards[Random.Range(0, possibleCards.Count)];
 
-        createdCard.GetComponent<CardCtrl>().cardOg = possibleCards[Random.Range(0, possibleCards.Count)];
+        int randCard = Random.Range(0, playersHand.deck.Count);
+        createdCard.GetComponent<CardCtrl>().cardOg = playersHand.deck[randCard];
+        playersHand.deck.RemoveAt(randCard);
         createdCard.GetComponent<CardCtrl>().SetCardData();
 
         /*card.atkT.text=selectedCard.atk+"";

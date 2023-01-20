@@ -7,14 +7,16 @@ public class CardCtrl : MonoBehaviour
 {
     public CardSO cardOg;
     bool infoSet=false;
+    public bool ableToBeSelected=false;
     public int cost, maxHp, atk, clock, hp, banana;
     [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT;
-    [SerializeField] GameObject atkI, bananaI, clockI, hpI;
+    [SerializeField] GameObject atkI, bananaI, clockI, hpI, a2BScolor;
     [SerializeField] Image bgImage, cardImage, rarityImage;
     [SerializeField] Color colorCommon, colorRare, colorEpic, colorLegendary, catPrimary, catMilitary, catSupport, catMagic, bloons, tSupport, bSupport, hero;
 
     void Update(){
         if(!infoSet) return;
+        a2BScolor.SetActive(ableToBeSelected);
         costT.text=cost+"";
         atkT.text=atk+"";
         bananaT.text=banana+"";
@@ -117,5 +119,9 @@ public class CardCtrl : MonoBehaviour
         if(banana==0) bananaI.SetActive(false);
         if(clock==0) clockI.SetActive(false);
         if(hp==0) hpI.SetActive(false);
+    }
+
+    public void Selected(){
+        ableToBeSelected=!ableToBeSelected;
     }
 }
