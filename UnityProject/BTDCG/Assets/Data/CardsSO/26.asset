@@ -23,7 +23,7 @@ MonoBehaviour:
   clock: 0
   health: 0
   bonusDesc: 
-  splashText: Needs to be Updated
+  splashText: Needs to be updated
   keywordsDesc:
   - Snipe 5
   - Ceranuc Buster

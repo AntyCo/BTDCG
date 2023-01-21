@@ -22,9 +22,7 @@ MonoBehaviour:
   maxBananas: 0
   clock: 0
   health: 0
-  bonusDesc: 'Add Recover 1 to target monke
-
-    (monkes can have max 3 traits)'
+  bonusDesc: Add Recover 1 to target Tower with less than 3 traits
   splashText: These are provided at Monkey Hospitals and Schools to suit the needs
     of hurt monkes!
   keywordsDesc: []

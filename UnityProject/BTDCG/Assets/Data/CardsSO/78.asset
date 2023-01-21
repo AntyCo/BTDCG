@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302d2e9265649a242bc9f5b6e5fd4640, type: 3}
   m_Name: 78
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Spiked Balls
   cardType: 0
-  rarity: 0
-  specificType: 0
-  image: {fileID: 0}
-  cost: 0
+  rarity: 1
+  specificType: 3
+  image: {fileID: 21300000, guid: fd038ab2646ad1a49b862623f8be718f, type: 3}
+  cost: 3
   atk: 0
-  maxBananas: 0
+  maxBananas: 2
   clock: 0
   health: 0
   bonusDesc: 
-  splashText: 
-  keywordsDesc: []
+  splashText: Needs to be upgraded
+  keywordsDesc:
+  - Spike Setter 1/2

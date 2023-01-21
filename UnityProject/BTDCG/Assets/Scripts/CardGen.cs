@@ -13,9 +13,22 @@ public class CardGen : MonoBehaviour
     public HandScript playersHand, opponentsHand; // player's/opponent's hand script
     public int cards2Draw, opCards2Draw; // how many cards to draw
     bool isOpponentDrawingRn=false;
+    List<string> saidKeywords = new List<string>();
 
     void Start(){
         cards2Draw=4; opCards2Draw=4;
+        for(int x=0; x<possibleCards.Count; x++){
+            for(int y=0; y<possibleCards[x].keywordsDesc.Count; y++){
+                bool wasThere=false;
+                for(int z=0; z<saidKeywords.Count; z++){
+                    if(saidKeywords[z]==possibleCards[x].keywordsDesc[y]) wasThere=true;
+                }
+                if(!wasThere){
+                    saidKeywords.Add(possibleCards[x].keywordsDesc[y]);
+                    Debug.Log($"{possibleCards[x].keywordsDesc[y]} | #{x+1} - {possibleCards[x].cardName}");
+                }
+            }
+        }
     }
 
     void Update(){

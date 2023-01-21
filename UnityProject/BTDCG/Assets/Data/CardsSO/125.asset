@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Turn Back the clock
   cardType: 2
   rarity: 2
-  specificType: 7
+  specificType: 5
   image: {fileID: 21300000, guid: 0ab8c2f97064ae947905f12adb619416, type: 3}
   cost: 4
   atk: 0
