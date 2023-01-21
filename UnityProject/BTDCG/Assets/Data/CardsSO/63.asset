@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302d2e9265649a242bc9f5b6e5fd4640, type: 3}
   m_Name: 63
   m_EditorClassIdentifier: 
-  cardName: Storm Druid
+  cardName: Druid of the Storm
   cardType: 0
   rarity: 1
   specificType: 2
@@ -25,5 +25,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: '"When I first told the wizard I commanded storms, they were shocked!"'
   keywordsDesc:
+  - LPP
   - Slow 1
   - Splash
