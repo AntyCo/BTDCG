@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum TurnOrder{Upkeep, MainPhaze, EndOfTurn};
+
 public class CardGen : MonoBehaviour
 {
     //float reload, maxReload=0.5f;
@@ -15,9 +17,13 @@ public class CardGen : MonoBehaviour
     bool isOpponentDrawingRn=false;
     List<string> saidKeywords = new List<string>();
 
+    public int currentTurn, currentTurnStage; public TurnOrder turnOrder;
+    public bool doesPlayerStart, isPlayersTurnNow;
+
     void Start(){
+        currentTurn=0; currentTurnStage=0; turnOrder=TurnOrder.EndOfTurn; isPlayersTurnNow=doesPlayerStart;
         cards2Draw=4; opCards2Draw=4;
-        for(int x=0; x<possibleCards.Count; x++){
+        /*for(int x=0; x<possibleCards.Count; x++){
             for(int y=0; y<possibleCards[x].keywordsDesc.Count; y++){
                 bool wasThere=false;
                 for(int z=0; z<saidKeywords.Count; z++){
@@ -28,7 +34,7 @@ public class CardGen : MonoBehaviour
                     Debug.Log($"{possibleCards[x].keywordsDesc[y]} | #{x+1} - {possibleCards[x].cardName}");
                 }
             }
-        }
+        }*/
     }
 
     void Update(){
@@ -42,6 +48,63 @@ public class CardGen : MonoBehaviour
         if(opCards2Draw>0 && !isOpponentDrawingRn){
             isOpponentDrawingRn=true;
             StartCoroutine(OpponentDrawCards(opCards2Draw));
+        }
+
+        if(currentTurn==0 && cards2Draw==0 && opCards2Draw==0){ //randomly selects who starts
+            doesPlayerStart=Random.Range(0,2)==1;
+            turnOrder=TurnOrder.Upkeep; currentTurnStage=1;
+        }
+
+        if(cards2Draw==0 && opCards2Draw==0){
+            switch(turnOrder){
+                case TurnOrder.Upkeep: {
+                    switch(currentTurnStage){
+                        case 1: {
+                            if(isPlayersTurnNow == doesPlayerStart) currentTurn++;
+                            currentTurnStage++;
+                            break;
+                        }
+                        case 2: {
+                            if(isPlayersTurnNow) Debug.Log("Player's bloons' clock"); else Debug.Log("Opponents's bloons' clock");
+                            currentTurnStage++;
+                            break;
+                        }
+                        case 3: {
+                            if(isPlayersTurnNow) Debug.Log("Player's monkes attack"); else Debug.Log("Opponents's monkes attack");
+                            currentTurnStage++;
+                            break;
+                        }
+                        case 4: {
+                            if(isPlayersTurnNow) Debug.Log("Player's monkes loose bananas"); else Debug.Log("Opponents's monkes loose bananas");
+                            currentTurnStage++;
+                            break;
+                        }
+                        case 5: {
+                            if(isPlayersTurnNow) cards2Draw=2; else opCards2Draw=2;
+                            currentTurnStage++;
+                            break;
+                        }
+                        case 6: {
+                            if(isPlayersTurnNow){
+                                playersHand.coins=Mathf.Clamp(currentTurn, 0, 10);
+                            } else{
+                                opponentsHand.coins=Mathf.Clamp(currentTurn, 0, 10);
+                            }
+                            turnOrder=TurnOrder.MainPhaze;
+                            currentTurnStage=1;
+                            break;
+                        }
+                    }
+                    break;
+                }
+                case TurnOrder.MainPhaze: {
+                    Debug.Log("A");
+                    break;
+                }
+                case TurnOrder.EndOfTurn: {
+                    break;
+                }
+            }
         }
     }
 
