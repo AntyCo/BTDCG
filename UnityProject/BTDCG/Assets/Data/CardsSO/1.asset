@@ -16,12 +16,15 @@ MonoBehaviour:
   cardType: 0
   rarity: 0
   specificType: 0
-  image: {fileID: 21300000, guid: fd038ab2646ad1a49b862623f8be718f, type: 3}
+  image: {fileID: 21300000, guid: ef5b991508984e0458903eb033b3a72d, type: 3}
+  upgradeFrom: {fileID: 0}
   cost: 0
   atk: 1
   maxBananas: 2
   clock: 0
   health: 0
+  typeText: DM-BASIC
   bonusDesc: 
-  splashText: Needs to be updated
+  splashText: '"Just your average monke citizen ready to pop some rubber!" - Dartus
+    Monkus'
   keywordsDesc: []

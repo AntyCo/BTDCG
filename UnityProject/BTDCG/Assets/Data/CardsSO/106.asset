@@ -17,11 +17,13 @@ MonoBehaviour:
   rarity: 0
   specificType: 5
   image: {fileID: 21300000, guid: 609620e02a09a23449c149d4c6698854, type: 3}
+  upgradeFrom: {fileID: 0}
   cost: 2
   atk: 0
   maxBananas: 0
   clock: 0
   health: 0
+  typeText: TSUP
   bonusDesc: Add Ultravision to target Tower
   splashText: This is the potion that can give the weakest and the mightiest monkes
     the ability to se camo bloons

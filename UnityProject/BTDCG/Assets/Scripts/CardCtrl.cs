@@ -5,18 +5,26 @@ using UnityEngine.UI;
 
 public class CardCtrl : MonoBehaviour
 {
-    public CardSO cardOg; public HandScript handOwner;
+    public CardSO cardOg; public HandScript handOwner; public CardGen cardGen;
     bool infoSet=false;
-    public bool ableToBeSelected=false, upsideDown;
+    public bool ableToBeSelected=false, isSelected=false, upsideDown;
     public int cost, maxHp, atk, clock, hp, banana;
-    [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT;
+    public CardType cardType; public CardTypeSpecific cardTypeSpecific;
+    [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT, typeT;
     [SerializeField] GameObject atkI, bananaI, clockI, hpI, a2BScolor, cardBack;
     [SerializeField] Image bgImage, cardImage, rarityImage;
     [SerializeField] Color colorCommon, colorRare, colorEpic, colorLegendary, catPrimary, catMilitary, catSupport, catMagic, bloons, tSupport, bSupport, hero;
 
     void Update(){
         if(!infoSet) return;
-        a2BScolor.SetActive(ableToBeSelected);
+        ableToBeSelected=(cardGen.selectedCard==null && cardGen.turnOrder==TurnOrder.MainPhaze && cardGen.isPlayersTurnNow==true && handOwner.coins>=cost);
+
+        a2BScolor.SetActive(ableToBeSelected || isSelected);
+        if(ableToBeSelected || isSelected){
+            if(isSelected) a2BScolor.GetComponent<Image>().color=colorLegendary;
+            else a2BScolor.GetComponent<Image>().color=colorCommon;
+        }
+
         costT.text=cost+"";
         atkT.text=atk+"";
         bananaT.text=banana+"";
@@ -31,11 +39,13 @@ public class CardCtrl : MonoBehaviour
         cardBack.SetActive(upsideDown);
     }
 
-    public void SetCardData(HandScript hO, bool spawnUD){
+    public void SetCardData(HandScript hO, bool spawnUD, CardGen cardG){
+        cardGen=cardG;
         upsideDown = spawnUD;
         handOwner=hO;
         nameT.text=cardOg.cardName;
         splashT.text=cardOg.splashText;
+        typeT.text=cardOg.typeText;
         cardImage.sprite=cardOg.image;
         cost=cardOg.cost;
         atk=cardOg.atk;
@@ -62,6 +72,8 @@ public class CardCtrl : MonoBehaviour
                 break;
             }
         }
+        cardType=cardOg.cardType;
+        cardTypeSpecific=cardOg.specificType;
 
         switch(cardOg.specificType){ //setting backgrounds as card types (specific)
             case CardTypeSpecific.primary: {
@@ -128,6 +140,9 @@ public class CardCtrl : MonoBehaviour
     }
 
     public void Selected(){
-        ableToBeSelected=!ableToBeSelected;
+        Debug.Log("Click!");
+        if(ableToBeSelected || isSelected) isSelected=!isSelected;
+        if(isSelected) cardGen.selectedCard=this;
+        else cardGen.selectedCard=null;
     }
 }

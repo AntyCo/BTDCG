@@ -17,11 +17,13 @@ MonoBehaviour:
   rarity: 1
   specificType: 2
   image: {fileID: 21300000, guid: bb6b539c1b5fc1044b4e3b86a6ae480b, type: 3}
+  upgradeFrom: {fileID: 11400000, guid: 51b9ad66bd2a8e84a9c16fcf0df67345, type: 2}
   cost: 3
   atk: 1
   maxBananas: 3
   clock: 0
   health: 0
+  typeText: AMUG
   bonusDesc: 
   splashText: '"If monke needs a little boost of power, this will help tremendously!"'
   keywordsDesc:

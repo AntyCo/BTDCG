@@ -17,11 +17,13 @@ MonoBehaviour:
   rarity: 0
   specificType: 0
   image: {fileID: 21300000, guid: 85199e5d2e1ada64f97e3022a6925c42, type: 3}
+  upgradeFrom: {fileID: 11400000, guid: 7908d33e1724cee47bc9acb7d1e5140b, type: 2}
   cost: 2
   atk: 2
   maxBananas: 2
   clock: 0
   health: 0
+  typeText: DMUG
   bonusDesc: 
   splashText: 'Theese crossbow bolts can
 

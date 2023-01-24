@@ -17,11 +17,13 @@ MonoBehaviour:
   rarity: 1
   specificType: 4
   image: {fileID: 21300000, guid: fd038ab2646ad1a49b862623f8be718f, type: 3}
+  upgradeFrom: {fileID: 0}
   cost: 5
   atk: 0
   maxBananas: 0
   clock: 1
   health: 6
+  typeText: BASIC
   bonusDesc: 
   splashText: Needs to be Upgraded
   keywordsDesc: []

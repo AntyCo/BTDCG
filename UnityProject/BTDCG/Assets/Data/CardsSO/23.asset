@@ -17,11 +17,13 @@ MonoBehaviour:
   rarity: 0
   specificType: 0
   image: {fileID: 21300000, guid: cae4864a36bf3da4f945edba6062fd35, type: 3}
+  upgradeFrom: {fileID: 11400000, guid: bc3650ae0ac178742846b852913a7948, type: 2}
   cost: 4
   atk: 3
   maxBananas: 2
   clock: 0
   health: 0
+  typeText: BSUG
   bonusDesc: 
   splashText: 'You may thing that the shark
 

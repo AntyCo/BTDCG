@@ -17,11 +17,13 @@ MonoBehaviour:
   rarity: 1
   specificType: 2
   image: {fileID: 21300000, guid: 302837835f4607c4fa05225d792d37a5, type: 3}
+  upgradeFrom: {fileID: 11400000, guid: 71863bfd0a78d4640ac79acd5d2c8007, type: 2}
   cost: 4
   atk: 2
   maxBananas: 2
   clock: 0
   health: 0
+  typeText: DRMUG
   bonusDesc: 
   splashText: '"When I first told the wizard I commanded storms, they were shocked!"'
   keywordsDesc:

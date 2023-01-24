@@ -17,6 +17,7 @@ public class CardSO : ScriptableObject
     public Rarity rarity;
     public CardTypeSpecific specificType;
     public Sprite image;
+    public CardSO upgradeFrom;
 
     //[Multiline] public string CardDesc;
 
@@ -24,6 +25,7 @@ public class CardSO : ScriptableObject
 
 
     public int cost, atk, maxBananas, clock, health;
+    public string typeText;
     [Multiline] public string bonusDesc;
     [Multiline] public string splashText;
     //public List<CardKeywords> keywordsList;

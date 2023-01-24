@@ -8,7 +8,7 @@ public enum TurnOrder{Upkeep, MainPhaze, EndOfTurn};
 public class CardGen : MonoBehaviour
 {
     //float reload, maxReload=0.5f;
-    [SerializeField] GameObject cardP, dcI, towerDbtn, bloonDbtn; // cardP = card prefab, dcI = "draw X cards!" icon, tower/bloon-Dbtn = are draw buttons
+    [SerializeField] GameObject cardP, dcI, towerDbtn, bloonDbtn, endTurnBtn; // cardP = card prefab, dcI = "draw X cards!" icon, tower/bloon-Dbtn = are draw buttons
     [SerializeField] Text dcT; // dcI text
     [SerializeField] Transform pHand, oHand; // player's/opponent's hand's transform
     public List<CardSO> possibleCards; // list of all possible cards in database - not used, but dont delete
@@ -20,9 +20,17 @@ public class CardGen : MonoBehaviour
     public int currentTurn, currentTurnStage; public TurnOrder turnOrder;
     public bool doesPlayerStart, isPlayersTurnNow;
 
+    public CardCtrl selectedCard; public LineScript selectedLine;
+
     void Start(){
+        selectedCard = null; selectedLine = null;
+        Screen.SetResolution(1920, 1080, true);
         currentTurn=0; currentTurnStage=0; turnOrder=TurnOrder.EndOfTurn; isPlayersTurnNow=doesPlayerStart;
         cards2Draw=4; opCards2Draw=4;
+        //GiveCard(59);
+        GiveCard(1);
+        GiveCard(103);
+        GiveCard(105);
         /*for(int x=0; x<possibleCards.Count; x++){
             for(int y=0; y<possibleCards[x].keywordsDesc.Count; y++){
                 bool wasThere=false;
@@ -51,8 +59,10 @@ public class CardGen : MonoBehaviour
         }
 
         if(currentTurn==0 && cards2Draw==0 && opCards2Draw==0){ //randomly selects who starts
-            doesPlayerStart=Random.Range(0,2)==1;
-            turnOrder=TurnOrder.Upkeep; currentTurnStage=1;
+            //for(int i=0; i<10; i++) Debug.Log(Random.Range(0,2));
+            doesPlayerStart=true;
+            isPlayersTurnNow=doesPlayerStart;
+            turnOrder=TurnOrder.Upkeep; currentTurnStage=1; 
         }
 
         if(cards2Draw==0 && opCards2Draw==0){
@@ -98,7 +108,24 @@ public class CardGen : MonoBehaviour
                     break;
                 }
                 case TurnOrder.MainPhaze: {
-                    Debug.Log("A");
+                    if(selectedCard!=null && selectedLine!=null){
+                        if(isPlayersTurnNow){
+                            selectedCard.transform.SetParent(selectedLine.playersSpawn.transform);
+                            selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
+                            selectedLine.playersCard=selectedCard;
+                            playersHand.coins-=selectedCard.cost;
+                        }
+                        else{
+                            selectedCard.transform.SetParent(selectedLine.opponentsSpawn.transform);
+                            selectedCard.transform.position=selectedLine.opponentsSpawn.transform.position;
+                            selectedLine.opponentsCard=selectedCard;
+                            opponentsHand.coins-=selectedCard.cost;
+                        }
+                        selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
+                        selectedCard=null;
+                        selectedLine=null;
+
+                    }
                     break;
                 }
                 case TurnOrder.EndOfTurn: {
@@ -106,6 +133,15 @@ public class CardGen : MonoBehaviour
                 }
             }
         }
+
+        endTurnBtn.SetActive(turnOrder==TurnOrder.MainPhaze && cards2Draw==0 && opCards2Draw==0 && isPlayersTurnNow);
+    }
+
+    public void GiveCard(int id){
+        GameObject createdCard = (GameObject)Instantiate(cardP, this.transform.position, Quaternion.Euler(0, 0, 0), pHand);
+        createdCard.transform.localScale=new Vector3(.5f, .5f, .5f);
+        createdCard.GetComponent<CardCtrl>().cardOg = possibleCards[id-1];
+        createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false, this);
     }
 
     public void DrawCard(bool fromTowerDeck){
@@ -121,7 +157,7 @@ public class CardGen : MonoBehaviour
                 playersHand.cardsInHand.Add(playersHand.deck[randCard]);
                 playersHand.deck.RemoveAt(randCard);
                 cards2Draw--;
-                createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false);
+                createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false, this);
             }
             else{
                 if(playersHand.bloonDeck.Count==0) return;
@@ -134,7 +170,7 @@ public class CardGen : MonoBehaviour
                 playersHand.cardsInHand.Add(playersHand.bloonDeck[randCard]);
                 playersHand.bloonDeck.RemoveAt(randCard);
                 cards2Draw--;
-                createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false);
+                createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false, this);
             }
         }
     }
@@ -160,7 +196,7 @@ public class CardGen : MonoBehaviour
             createdCard.GetComponent<CardCtrl>().cardOg = opponentsHand.deck[randCard];
             opponentsHand.cardsInHand.Add(opponentsHand.deck[randCard]);
             opponentsHand.deck.RemoveAt(randCard);
-            createdCard.GetComponent<CardCtrl>().SetCardData(opponentsHand, true);
+            createdCard.GetComponent<CardCtrl>().SetCardData(opponentsHand, true, this);
         }
         else{
             if(opponentsHand.bloonDeck.Count==0) OpponentDrawCard(true);
@@ -172,8 +208,12 @@ public class CardGen : MonoBehaviour
             createdCard.GetComponent<CardCtrl>().cardOg = opponentsHand.bloonDeck[randCard];
             opponentsHand.cardsInHand.Add(opponentsHand.bloonDeck[randCard]);
             opponentsHand.bloonDeck.RemoveAt(randCard);
-            createdCard.GetComponent<CardCtrl>().SetCardData(opponentsHand, true);
+            createdCard.GetComponent<CardCtrl>().SetCardData(opponentsHand, true, this);
 
         }
+    }
+
+    public void EndTurn(){
+        turnOrder=TurnOrder.EndOfTurn; currentTurnStage=1;
     }
 }
