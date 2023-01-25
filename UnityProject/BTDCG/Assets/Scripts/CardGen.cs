@@ -27,10 +27,11 @@ public class CardGen : MonoBehaviour
         Screen.SetResolution(1920, 1080, true);
         currentTurn=0; currentTurnStage=0; turnOrder=TurnOrder.EndOfTurn; isPlayersTurnNow=doesPlayerStart;
         cards2Draw=4; opCards2Draw=4;
-        //GiveCard(59);
         GiveCard(1);
-        GiveCard(103);
-        GiveCard(105);
+        GiveCard(2);
+        //GiveCard(1);
+        //GiveCard(103);
+        //GiveCard(105);
         /*for(int x=0; x<possibleCards.Count; x++){
             for(int y=0; y<possibleCards[x].keywordsDesc.Count; y++){
                 bool wasThere=false;
@@ -100,6 +101,7 @@ public class CardGen : MonoBehaviour
                             } else{
                                 opponentsHand.coins=Mathf.Clamp(currentTurn, 0, 10);
                             }
+                            playersHand.coins+=1;
                             turnOrder=TurnOrder.MainPhaze;
                             currentTurnStage=1;
                             break;
@@ -112,16 +114,20 @@ public class CardGen : MonoBehaviour
                         if(isPlayersTurnNow){
                             selectedCard.transform.SetParent(selectedLine.playersSpawn.transform);
                             selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
-                            selectedLine.playersCard=selectedCard;
+                            if(selectedLine.playersCard.Count>0) selectedLine.playersCard[0].transform.position=selectedLine.playersSpawn.transform.position + new Vector3(0, 20, 0);
+                            selectedLine.playersCard.Add(selectedCard);
                             playersHand.coins-=selectedCard.cost;
                         }
                         else{
                             selectedCard.transform.SetParent(selectedLine.opponentsSpawn.transform);
                             selectedCard.transform.position=selectedLine.opponentsSpawn.transform.position;
-                            selectedLine.opponentsCard=selectedCard;
+                            if(selectedLine.opponentsCard.Count>0) selectedLine.opponentsCard[0].transform.position=selectedLine.opponentsSpawn.transform.position + new Vector3(0, 20, 0);
+                            selectedLine.opponentsCard.Add(selectedCard);
                             opponentsHand.coins-=selectedCard.cost;
                         }
                         selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
+                        selectedCard.isSelected=false;
+                        selectedCard.lineItIsOn=selectedLine;
                         selectedCard=null;
                         selectedLine=null;
 

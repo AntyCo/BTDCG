@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardCtrl : MonoBehaviour
 {
-    public CardSO cardOg; public HandScript handOwner; public CardGen cardGen;
+    public CardSO cardOg; public HandScript handOwner; public CardGen cardGen; public LineScript lineItIsOn;
     bool infoSet=false;
     public bool ableToBeSelected=false, isSelected=false, upsideDown;
     public int cost, maxHp, atk, clock, hp, banana;
@@ -18,6 +18,9 @@ public class CardCtrl : MonoBehaviour
     void Update(){
         if(!infoSet) return;
         ableToBeSelected=(cardGen.selectedCard==null && cardGen.turnOrder==TurnOrder.MainPhaze && cardGen.isPlayersTurnNow==true && handOwner.coins>=cost);
+        if (lineItIsOn!=null) for(int i=0; i<lineItIsOn.playersCard.Count; i++){
+            if(lineItIsOn.playersCard[i]==this) ableToBeSelected=false;
+        }
 
         a2BScolor.SetActive(ableToBeSelected || isSelected);
         if(ableToBeSelected || isSelected){
