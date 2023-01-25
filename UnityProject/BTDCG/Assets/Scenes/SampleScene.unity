@@ -1315,8 +1315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landType: 0
   cardGen: {fileID: 1031969735}
-  playersCard: {fileID: 0}
-  opponentsCard: {fileID: 0}
+  playersCard: []
+  opponentsCard: []
   playersSpawn: {fileID: 1305729772}
   opponentsSpawn: {fileID: 1167910388}
   button: {fileID: 1069109549}
@@ -2382,6 +2382,7 @@ GameObject:
   - component: {fileID: 1571416716}
   - component: {fileID: 1571416715}
   - component: {fileID: 1571416717}
+  - component: {fileID: 1571416718}
   m_Layer: 5
   m_Name: Turn Clock
   m_TagString: Untagged
@@ -2463,6 +2464,21 @@ MonoBehaviour:
   imgUpkeep: {fileID: 21300000, guid: aa1c86f1035151e419b519242c86ce83, type: 3}
   imgMain: {fileID: 21300000, guid: e2e2e3b70e362bb47b24ac66ef633c40, type: 3}
   imgEndOfTurn: {fileID: 21300000, guid: 9f563e70b6e5b8e40bb7f7d411260b71, type: 3}
+--- !u!114 &1571416718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571416713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1768394250
 GameObject:
   m_ObjectHideFlags: 0
