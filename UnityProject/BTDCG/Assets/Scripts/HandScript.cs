@@ -9,10 +9,11 @@ public class HandScript : MonoBehaviour
     [SerializeField] RectTransform rT;
     [SerializeField] bool isPlayers;
     public int coins, heroHp;
-    [SerializeField] Text coinText;
+    [SerializeField] Text coinText, hpText;
 
     void Update(){
         coinText.text=coins+"";
+        hpText.text=heroHp+"";
         if(isPlayers){
             if((Input.mousePosition.y/Screen.height*1080)<rT.anchoredPosition.y+200)
                 rT.anchoredPosition=new Vector2(0, 200);

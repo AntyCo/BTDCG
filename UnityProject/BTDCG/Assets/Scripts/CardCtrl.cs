@@ -17,7 +17,18 @@ public class CardCtrl : MonoBehaviour
 
     void Update(){
         if(!infoSet) return;
-        ableToBeSelected=(cardGen.selectedCard==null && cardGen.turnOrder==TurnOrder.MainPhaze && cardGen.isPlayersTurnNow==true && handOwner.coins>=cost);
+
+        ableToBeSelected=true;
+        if(cardOg.upgradeFrom!=null){
+            ableToBeSelected=false;
+            for(int i=0; i<cardGen.lines.Count; i++){
+                if(cardGen.lines[i].playersCard.Count!=0){
+                    if(cardOg.upgradeFrom==cardGen.lines[i].playersCard[cardGen.lines[i].playersCard.Count-1].cardOg) ableToBeSelected=true;
+                }
+            }
+        }
+        ableToBeSelected=(cardGen.selectedCard==null && cardGen.turnOrder==TurnOrder.MainPhaze && cardGen.isPlayersTurnNow==true && handOwner.coins>=cost && ableToBeSelected);
+
         if (lineItIsOn!=null) for(int i=0; i<lineItIsOn.playersCard.Count; i++){
             if(lineItIsOn.playersCard[i]==this) ableToBeSelected=false;
         }

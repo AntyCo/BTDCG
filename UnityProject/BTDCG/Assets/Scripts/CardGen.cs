@@ -15,35 +15,19 @@ public class CardGen : MonoBehaviour
     public HandScript playersHand, opponentsHand; // player's/opponent's hand script
     public int cards2Draw, opCards2Draw; // how many cards to draw
     bool isOpponentDrawingRn=false;
-    List<string> saidKeywords = new List<string>();
 
-    public int currentTurn, currentTurnStage; public TurnOrder turnOrder;
-    public bool doesPlayerStart, isPlayersTurnNow;
+    public int currentTurn, currentTurnStage; public TurnOrder turnOrder; // Turn stuff
+    public bool doesPlayerStart, isPlayersTurnNow; // More turn stuff
 
-    public CardCtrl selectedCard; public LineScript selectedLine;
+    public CardCtrl selectedCard; public LineScript selectedLine; // Selecting... Soon will be changed to dragging
+
+    public List<LineScript> lines;
 
     void Start(){
         selectedCard = null; selectedLine = null;
         Screen.SetResolution(1920, 1080, true);
         currentTurn=0; currentTurnStage=0; turnOrder=TurnOrder.EndOfTurn; isPlayersTurnNow=doesPlayerStart;
         cards2Draw=4; opCards2Draw=4;
-        GiveCard(1);
-        GiveCard(2);
-        //GiveCard(1);
-        //GiveCard(103);
-        //GiveCard(105);
-        /*for(int x=0; x<possibleCards.Count; x++){
-            for(int y=0; y<possibleCards[x].keywordsDesc.Count; y++){
-                bool wasThere=false;
-                for(int z=0; z<saidKeywords.Count; z++){
-                    if(saidKeywords[z]==possibleCards[x].keywordsDesc[y]) wasThere=true;
-                }
-                if(!wasThere){
-                    saidKeywords.Add(possibleCards[x].keywordsDesc[y]);
-                    Debug.Log($"{possibleCards[x].keywordsDesc[y]} | #{x+1} - {possibleCards[x].cardName}");
-                }
-            }
-        }*/
     }
 
     void Update(){
@@ -76,7 +60,35 @@ public class CardGen : MonoBehaviour
                             break;
                         }
                         case 2: {
-                            if(isPlayersTurnNow) Debug.Log("Player's bloons' clock"); else Debug.Log("Opponents's bloons' clock");
+                            if(isPlayersTurnNow){
+                                for(int i=0; i<lines.Count; i++){
+                                    Debug.Log("");
+                                    if(lines[i].playersCard.Count>0){
+                                        Debug.Log("A");
+                                        CardCtrl curCard = lines[i].playersCard[lines[i].playersCard.Count-1];
+                                        if(curCard.cardType==CardType.bloon){
+                                            curCard.clock--;
+                                            if(curCard.clock<=0){
+                                                opponentsHand.heroHp-=curCard.hp;
+                                                lines[i].DiscardAll(true, playersHand);
+                                            }
+                                        }
+                                    }
+                                }
+                            } else{
+                                for(int i=0; i<lines.Count; i++){
+                                    if(lines[i].opponentsCard.Count>0){
+                                        CardCtrl curCard = lines[i].opponentsCard[lines[i].opponentsCard.Count-1];
+                                        if(curCard.cardType==CardType.tower){
+                                            curCard.clock--;
+                                            if(curCard.clock<=0){
+                                                playersHand.heroHp-=curCard.hp;
+                                                lines[i].DiscardAll(false, opponentsHand);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             currentTurnStage++;
                             break;
                         }
@@ -86,22 +98,49 @@ public class CardGen : MonoBehaviour
                             break;
                         }
                         case 4: {
-                            if(isPlayersTurnNow) Debug.Log("Player's monkes loose bananas"); else Debug.Log("Opponents's monkes loose bananas");
+                            if(isPlayersTurnNow){
+                                for(int i=0; i<lines.Count; i++){
+                                    if(lines[i].playersCard.Count>0){
+                                        CardCtrl curCard = lines[i].playersCard[lines[i].playersCard.Count-1];
+                                        if(curCard.cardType==CardType.tower){
+                                            curCard.banana--;
+                                            if(curCard.banana<=0){
+                                                lines[i].DiscardAll(true, playersHand);
+                                            }
+                                        }
+                                    }
+                                }
+                            } else{
+                                for(int i=0; i<lines.Count; i++){
+                                    if(lines[i].opponentsCard.Count>0){
+                                        CardCtrl curCard = lines[i].opponentsCard[lines[i].opponentsCard.Count-1];
+                                        if(curCard.cardType==CardType.tower){
+                                            curCard.banana--;
+                                            if(curCard.banana<=0){
+                                                lines[i].DiscardAll(false, opponentsHand);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             currentTurnStage++;
                             break;
                         }
                         case 5: {
-                            if(isPlayersTurnNow) cards2Draw=2; else opCards2Draw=2;
+                            if(isPlayersTurnNow){
+                                playersHand.coins=Mathf.Clamp(currentTurn, 0, 10);
+                            }else{
+                                opponentsHand.coins=Mathf.Clamp(currentTurn, 0, 10);
+                            }
                             currentTurnStage++;
                             break;
                         }
                         case 6: {
-                            if(isPlayersTurnNow){
-                                playersHand.coins=Mathf.Clamp(currentTurn, 0, 10);
-                            } else{
-                                opponentsHand.coins=Mathf.Clamp(currentTurn, 0, 10);
-                            }
-                            playersHand.coins+=1;
+                            if(isPlayersTurnNow) cards2Draw=2; else opCards2Draw=2;
+                            currentTurnStage++;
+                            break;
+                        }
+                        case 7: {
                             turnOrder=TurnOrder.MainPhaze;
                             currentTurnStage=1;
                             break;
@@ -110,31 +149,31 @@ public class CardGen : MonoBehaviour
                     break;
                 }
                 case TurnOrder.MainPhaze: {
-                    if(selectedCard!=null && selectedLine!=null){
-                        if(isPlayersTurnNow){
+                    if(isPlayersTurnNow){
+                        if(selectedCard!=null && selectedLine!=null){
                             selectedCard.transform.SetParent(selectedLine.playersSpawn.transform);
                             selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
                             if(selectedLine.playersCard.Count>0) selectedLine.playersCard[0].transform.position=selectedLine.playersSpawn.transform.position + new Vector3(0, 20, 0);
                             selectedLine.playersCard.Add(selectedCard);
                             playersHand.coins-=selectedCard.cost;
-                        }
-                        else{
-                            selectedCard.transform.SetParent(selectedLine.opponentsSpawn.transform);
-                            selectedCard.transform.position=selectedLine.opponentsSpawn.transform.position;
-                            if(selectedLine.opponentsCard.Count>0) selectedLine.opponentsCard[0].transform.position=selectedLine.opponentsSpawn.transform.position + new Vector3(0, 20, 0);
-                            selectedLine.opponentsCard.Add(selectedCard);
-                            opponentsHand.coins-=selectedCard.cost;
-                        }
-                        selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
-                        selectedCard.isSelected=false;
-                        selectedCard.lineItIsOn=selectedLine;
-                        selectedCard=null;
-                        selectedLine=null;
 
+                            selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
+                            selectedCard.isSelected=false;
+                            selectedCard.lineItIsOn=selectedLine;
+                            selectedCard=null;
+                            selectedLine=null;
+                        }
+                    }
+                    else{
+                        turnOrder=TurnOrder.EndOfTurn; currentTurnStage=1;
                     }
                     break;
                 }
                 case TurnOrder.EndOfTurn: {
+                    Debug.Log("EOF");
+                    turnOrder=TurnOrder.Upkeep;
+                    currentTurnStage=1;
+                    isPlayersTurnNow=!isPlayersTurnNow;
                     break;
                 }
             }
