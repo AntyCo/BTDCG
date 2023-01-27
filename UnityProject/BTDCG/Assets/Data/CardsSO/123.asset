@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 123
   m_EditorClassIdentifier: 
   cardName: Benjamin's Investments
+  cardId: 123
   cardType: 2
   rarity: 2
   specificType: 5

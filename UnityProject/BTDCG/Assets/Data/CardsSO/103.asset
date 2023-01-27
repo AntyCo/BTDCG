@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 103
   m_EditorClassIdentifier: 
   cardName: Fortified Moab
+  cardId: 103
   cardType: 1
   rarity: 2
   specificType: 4

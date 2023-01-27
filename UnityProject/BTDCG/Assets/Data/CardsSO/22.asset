@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 22
   m_EditorClassIdentifier: 
   cardName: Cluster Bombs
+  cardId: 22
   cardType: 0
   rarity: 0
   specificType: 0

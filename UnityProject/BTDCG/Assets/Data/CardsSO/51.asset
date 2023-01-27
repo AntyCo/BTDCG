@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 51
   m_EditorClassIdentifier: 
   cardName: Spy Plane
+  cardId: 51
   cardType: 0
   rarity: 1
   specificType: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 88
   m_EditorClassIdentifier: 
   cardName: Primary Training
+  cardId: 88
   cardType: 0
   rarity: 1
   specificType: 3

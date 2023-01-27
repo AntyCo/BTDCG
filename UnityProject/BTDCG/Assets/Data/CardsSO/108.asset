@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 108
   m_EditorClassIdentifier: 
   cardName: Starvation
+  cardId: 108
   cardType: 2
   rarity: 2
   specificType: 5

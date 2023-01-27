@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 48
   m_EditorClassIdentifier: 
   cardName: Hydro Rocket Pods
+  cardId: 48
   cardType: 0
   rarity: 1
   specificType: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 89
   m_EditorClassIdentifier: 
   cardName: Red Bloon
+  cardId: 89
   cardType: 1
   rarity: 0
   specificType: 4

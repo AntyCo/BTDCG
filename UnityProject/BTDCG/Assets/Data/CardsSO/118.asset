@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 118
   m_EditorClassIdentifier: 
   cardName: Concussion Reduction Rubber
+  cardId: 118
   cardType: 2
   rarity: 1
   specificType: 6

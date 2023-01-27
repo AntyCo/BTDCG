@@ -159,4 +159,16 @@ public class CardCtrl : MonoBehaviour
         if(isSelected) cardGen.selectedCard=this;
         else cardGen.selectedCard=null;
     }
+
+    public void Discard(){
+        for(int i=0; i<handOwner.cardsInHand.Count; i++){
+            if(handOwner.cardsInHand[i]==this) handOwner.cardsInHand.RemoveAt(i);
+        }
+        if(cardTypeSpecific == CardTypeSpecific.bloons || cardTypeSpecific == CardTypeSpecific.bSupport){
+            handOwner.bloonDiscard.Add(cardOg);
+        } else{
+            handOwner.discard.Add(cardOg);
+        }
+        Destroy(this.gameObject);
+    }
 }

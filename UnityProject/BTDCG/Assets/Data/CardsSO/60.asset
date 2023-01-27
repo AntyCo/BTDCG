@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 60
   m_EditorClassIdentifier: 
   cardName: Flash Bomb
+  cardId: 60
   cardType: 0
   rarity: 1
   specificType: 2

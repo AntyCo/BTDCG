@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 12
   m_EditorClassIdentifier: 
   cardName: Bloon Dissolver
+  cardId: 12
   cardType: 0
   rarity: 0
   specificType: 0

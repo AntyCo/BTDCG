@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 59
   m_EditorClassIdentifier: 
   cardName: Shinobi Tactics
+  cardId: 59
   cardType: 0
   rarity: 1
   specificType: 2

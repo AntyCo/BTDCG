@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 33
   m_EditorClassIdentifier: 
   cardName: Monke Sub
+  cardId: 33
   cardType: 0
   rarity: 0
   specificType: 1

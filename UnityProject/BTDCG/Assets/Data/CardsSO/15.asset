@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 15
   m_EditorClassIdentifier: 
   cardName: Cryo Cannon
+  cardId: 15
   cardType: 0
   rarity: 1
   specificType: 0

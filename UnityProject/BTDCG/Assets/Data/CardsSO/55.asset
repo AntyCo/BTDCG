@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 55
   m_EditorClassIdentifier: 
   cardName: Wall of Fire Wizard
+  cardId: 55
   cardType: 0
   rarity: 2
   specificType: 2

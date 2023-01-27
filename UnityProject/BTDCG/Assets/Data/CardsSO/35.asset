@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 35
   m_EditorClassIdentifier: 
   cardName: Ballistic Missile
+  cardId: 35
   cardType: 0
   rarity: 1
   specificType: 1

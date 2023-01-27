@@ -12,6 +12,7 @@ public enum CardTypeSpecific{primary, military, magic, support, bloons, tSupport
 public class CardSO : ScriptableObject
 {
     public string cardName;
+    public int cardId;
     //[Multiline] public string description;
     public CardType cardType;
     public Rarity rarity;

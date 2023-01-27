@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 110
   m_EditorClassIdentifier: 
   cardName: Quincy's Raom of Arrows
+  cardId: 110
   cardType: 2
   rarity: 3
   specificType: 6

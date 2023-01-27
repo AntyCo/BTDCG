@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 75
   m_EditorClassIdentifier: 
   cardName: Monke Bank
+  cardId: 75
   cardType: 0
   rarity: 2
   specificType: 3

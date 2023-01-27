@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 87
   m_EditorClassIdentifier: 
   cardName: MIB
+  cardId: 87
   cardType: 0
   rarity: 2
   specificType: 3

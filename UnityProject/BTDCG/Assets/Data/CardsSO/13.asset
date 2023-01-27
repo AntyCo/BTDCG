@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 13
   m_EditorClassIdentifier: 
   cardName: Ice Monke
+  cardId: 13
   cardType: 0
   rarity: 0
   specificType: 0

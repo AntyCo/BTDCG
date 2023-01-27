@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 126
   m_EditorClassIdentifier: 
   cardName: Monke Pox Curse
+  cardId: 126
   cardType: 2
   rarity: 2
   specificType: 5

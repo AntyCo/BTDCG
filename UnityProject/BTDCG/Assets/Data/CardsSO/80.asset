@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 80
   m_EditorClassIdentifier: 
   cardName: MOAB Shreder
+  cardId: 80
   cardType: 0
   rarity: 1
   specificType: 3

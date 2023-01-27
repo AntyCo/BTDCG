@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 70
   m_EditorClassIdentifier: 
   cardName: Sun Avatar
+  cardId: 70
   cardType: 0
   rarity: 0
   specificType: 2

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 86
   m_EditorClassIdentifier: 
   cardName: Monke Town
+  cardId: 86
   cardType: 0
   rarity: 2
   specificType: 3

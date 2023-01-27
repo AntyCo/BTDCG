@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 46
   m_EditorClassIdentifier: 
   cardName: Laser Cannon
+  cardId: 46
   cardType: 0
   rarity: 1
   specificType: 1

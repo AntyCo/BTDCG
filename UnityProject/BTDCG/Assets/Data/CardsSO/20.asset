@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 20
   m_EditorClassIdentifier: 
   cardName: Glaive Ricocher
+  cardId: 20
   cardType: 0
   rarity: 0
   specificType: 0

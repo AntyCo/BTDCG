@@ -151,15 +151,26 @@ public class CardGen : MonoBehaviour
                 case TurnOrder.MainPhaze: {
                     if(isPlayersTurnNow){
                         if(selectedCard!=null && selectedLine!=null){
-                            selectedCard.transform.SetParent(selectedLine.playersSpawn.transform);
-                            selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
-                            if(selectedLine.playersCard.Count>0) selectedLine.playersCard[0].transform.position=selectedLine.playersSpawn.transform.position + new Vector3(0, 20, 0);
-                            selectedLine.playersCard.Add(selectedCard);
-                            playersHand.coins-=selectedCard.cost;
+                            if(selectedCard.cardType!=CardType.support){
+                                selectedCard.transform.SetParent(selectedLine.playersSpawn.transform);
+                                selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
+                                if(selectedLine.playersCard.Count>0) selectedLine.playersCard[0].transform.position=selectedLine.playersSpawn.transform.position + new Vector3(0, 20, 0);
+                                selectedLine.playersCard.Add(selectedCard);
+                                playersHand.coins-=selectedCard.cost;
 
-                            selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
-                            selectedCard.isSelected=false;
-                            selectedCard.lineItIsOn=selectedLine;
+                                selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
+                                selectedCard.isSelected=false;
+                                selectedCard.lineItIsOn=selectedLine;
+                            } else{
+                                switch(selectedCard.cardOg.cardId){
+                                    case 121: {
+                                        playersHand.heroHp+=3;
+                                        break;
+                                    }
+                                }
+                                playersHand.coins-=selectedCard.cost;
+                                selectedCard.Discard();
+                            }
                             selectedCard=null;
                             selectedLine=null;
                         }
@@ -199,7 +210,7 @@ public class CardGen : MonoBehaviour
 
                 int randCard = Random.Range(0, playersHand.deck.Count);
                 createdCard.GetComponent<CardCtrl>().cardOg = playersHand.deck[randCard];
-                playersHand.cardsInHand.Add(playersHand.deck[randCard]);
+                playersHand.cardsInHand.Add(createdCard.GetComponent<CardCtrl>());
                 playersHand.deck.RemoveAt(randCard);
                 cards2Draw--;
                 createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false, this);
@@ -212,7 +223,7 @@ public class CardGen : MonoBehaviour
 
                 int randCard = Random.Range(0, playersHand.bloonDeck.Count);
                 createdCard.GetComponent<CardCtrl>().cardOg = playersHand.bloonDeck[randCard];
-                playersHand.cardsInHand.Add(playersHand.bloonDeck[randCard]);
+                playersHand.cardsInHand.Add(createdCard.GetComponent<CardCtrl>());
                 playersHand.bloonDeck.RemoveAt(randCard);
                 cards2Draw--;
                 createdCard.GetComponent<CardCtrl>().SetCardData(playersHand, false, this);
@@ -239,7 +250,7 @@ public class CardGen : MonoBehaviour
 
             int randCard = Random.Range(0, opponentsHand.deck.Count);
             createdCard.GetComponent<CardCtrl>().cardOg = opponentsHand.deck[randCard];
-            opponentsHand.cardsInHand.Add(opponentsHand.deck[randCard]);
+            opponentsHand.cardsInHand.Add(createdCard.GetComponent<CardCtrl>());
             opponentsHand.deck.RemoveAt(randCard);
             createdCard.GetComponent<CardCtrl>().SetCardData(opponentsHand, true, this);
         }
@@ -251,7 +262,7 @@ public class CardGen : MonoBehaviour
 
             int randCard = Random.Range(0, opponentsHand.bloonDeck.Count);
             createdCard.GetComponent<CardCtrl>().cardOg = opponentsHand.bloonDeck[randCard];
-            opponentsHand.cardsInHand.Add(opponentsHand.bloonDeck[randCard]);
+            opponentsHand.cardsInHand.Add(createdCard.GetComponent<CardCtrl>());
             opponentsHand.bloonDeck.RemoveAt(randCard);
             createdCard.GetComponent<CardCtrl>().SetCardData(opponentsHand, true, this);
 

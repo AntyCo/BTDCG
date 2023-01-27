@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 30
   m_EditorClassIdentifier: 
   cardName: Razor Rotor Heli
+  cardId: 30
   cardType: 0
   rarity: 1
   specificType: 1

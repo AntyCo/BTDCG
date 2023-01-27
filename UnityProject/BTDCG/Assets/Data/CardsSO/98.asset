@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 98
   m_EditorClassIdentifier: 
   cardName: Lead Bloon
+  cardId: 98
   cardType: 1
   rarity: 1
   specificType: 4

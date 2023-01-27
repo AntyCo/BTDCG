@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 124
   m_EditorClassIdentifier: 
   cardName: Gwen's Flame Aura
+  cardId: 124
   cardType: 2
   rarity: 3
   specificType: 5

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   cardName: Dart Monke
+  cardId: 1
   cardType: 0
   rarity: 0
   specificType: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 73
   m_EditorClassIdentifier: 
   cardName: Banana Farm
+  cardId: 73
   cardType: 0
   rarity: 0
   specificType: 3

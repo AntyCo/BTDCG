@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 24
   m_EditorClassIdentifier: 
   cardName: Really Big Bombs
+  cardId: 24
   cardType: 0
   rarity: 1
   specificType: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 130
   m_EditorClassIdentifier: 
   cardName: Bloon Splitter
+  cardId: 130
   cardType: 2
   rarity: 2
   specificType: 6

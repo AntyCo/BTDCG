@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 120
   m_EditorClassIdentifier: 
   cardName: Cryogenic Ammo
+  cardId: 120
   cardType: 2
   rarity: 2
   specificType: 5

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 74
   m_EditorClassIdentifier: 
   cardName: Banana Plantation
+  cardId: 74
   cardType: 0
   rarity: 1
   specificType: 3

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 96
   m_EditorClassIdentifier: 
   cardName: Zebra Bloon
+  cardId: 96
   cardType: 1
   rarity: 2
   specificType: 4

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 62
   m_EditorClassIdentifier: 
   cardName: Druid of Wrath
+  cardId: 62
   cardType: 0
   rarity: 0
   specificType: 2

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 71
   m_EditorClassIdentifier: 
   cardName: Robo Monke
+  cardId: 71
   cardType: 0
   rarity: 1
   specificType: 2

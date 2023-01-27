@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 129
   m_EditorClassIdentifier: 
   cardName: Rubber Sacrifice
+  cardId: 129
   cardType: 2
   rarity: 3
   specificType: 6

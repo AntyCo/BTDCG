@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 104
   m_EditorClassIdentifier: 
   cardName: Open Fire!
+  cardId: 104
   cardType: 2
   rarity: 1
   specificType: 5

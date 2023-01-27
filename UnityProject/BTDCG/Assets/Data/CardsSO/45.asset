@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 45
   m_EditorClassIdentifier: 
   cardName: Dartling gunner
+  cardId: 45
   cardType: 0
   rarity: 0
   specificType: 1

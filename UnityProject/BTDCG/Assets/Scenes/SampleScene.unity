@@ -746,6 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec44b9b84fd5e1419847b7a2b60d816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedDeck: {fileID: 11400000, guid: 85f95250d1bde9146b15015cb523f86d, type: 2}
   deck:
   - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
   - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
@@ -3169,6 +3170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec44b9b84fd5e1419847b7a2b60d816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedDeck: {fileID: 11400000, guid: 85f95250d1bde9146b15015cb523f86d, type: 2}
   deck:
   - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
   - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}

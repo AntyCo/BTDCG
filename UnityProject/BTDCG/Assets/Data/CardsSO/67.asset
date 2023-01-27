@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 67
   m_EditorClassIdentifier: 
   cardName: 
+  cardId: 67
   cardType: 0
   rarity: 0
   specificType: 0

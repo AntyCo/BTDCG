@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 41
   m_EditorClassIdentifier: 
   cardName: Mortar Monke
+  cardId: 41
   cardType: 0
   rarity: 0
   specificType: 1

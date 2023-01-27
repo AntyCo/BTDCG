@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 85
   m_EditorClassIdentifier: 
   cardName: Monke Village
+  cardId: 85
   cardType: 0
   rarity: 0
   specificType: 3

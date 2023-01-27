@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 105
   m_EditorClassIdentifier: 
   cardName: One with the Banana
+  cardId: 105
   cardType: 2
   rarity: 1
   specificType: 5

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 79
   m_EditorClassIdentifier: 
   cardName: Long Life Spikes
+  cardId: 79
   cardType: 0
   rarity: 1
   specificType: 3
