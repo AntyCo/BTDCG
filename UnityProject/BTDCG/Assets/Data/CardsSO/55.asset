@@ -28,5 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Incendio!
   keywordsDesc:
-  - Blazing
-  - Splash
+  - name: 43
+    tier: 3
+    secondaryTier: 1
+  - name: 3
+    tier: 0
+    secondaryTier: 0
+  - name: 6
+    tier: 0
+    secondaryTier: 0

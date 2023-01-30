@@ -33,4 +33,6 @@ MonoBehaviour:
     chill
     out'
   keywordsDesc:
-  - Freeze 1
+  - name: 14
+    tier: 1
+    secondaryTier: 0

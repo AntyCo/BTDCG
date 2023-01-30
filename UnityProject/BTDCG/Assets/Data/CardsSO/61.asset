@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: '"Some call what I do magic, I prefer the term "all natural"'
   keywordsDesc:
-  - Splash
+  - name: 37
+    tier: 0
+    secondaryTier: 0

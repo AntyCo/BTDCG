@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Freeze 1
-  - Ultravision
-  - LPP
+  - name: 14
+    tier: 1
+    secondaryTier: 0
+  - name: 40
+    tier: 0
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0

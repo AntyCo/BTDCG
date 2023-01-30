@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Slow 1
-  - DOT 2
-  - LPP
+  - name: 32
+    tier: 1
+    secondaryTier: 0
+  - name: 8
+    tier: 2
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0

@@ -33,5 +33,9 @@ MonoBehaviour:
     through the
     air...'
   keywordsDesc:
-  - LPP
-  - Hover
+  - name: 16
+    tier: 0
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0

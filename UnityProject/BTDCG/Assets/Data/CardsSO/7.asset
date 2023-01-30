@@ -28,5 +28,9 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Blazing
-  - Splash
+  - name: 3
+    tier: 0
+    secondaryTier: 0
+  - name: 37
+    tier: 0
+    secondaryTier: 0

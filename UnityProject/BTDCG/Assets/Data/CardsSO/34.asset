@@ -28,5 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - Reveal
-  - Watercraft
+  - name: 28
+    tier: 0
+    secondaryTier: 0
+  - name: 42
+    tier: 0
+    secondaryTier: 0
+  - name: 33
+    tier: 1
+    secondaryTier: 0

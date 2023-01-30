@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: '"When I first told the wizard I commanded storms, they were shocked!"'
   keywordsDesc:
-  - LPP
-  - Slow 1
-  - Splash
+  - name: 19
+    tier: 0
+    secondaryTier: 0
+  - name: 32
+    tier: 1
+    secondaryTier: 0
+  - name: 37
+    tier: 0
+    secondaryTier: 0

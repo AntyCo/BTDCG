@@ -28,5 +28,9 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Freeze 1
-  - Splash
+  - name: 14
+    tier: 1
+    secondaryTier: 0
+  - name: 37
+    tier: 0
+    secondaryTier: 0

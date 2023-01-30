@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - MOAB Slow 1
+  - name: 22
+    tier: 1
+    secondaryTier: 0

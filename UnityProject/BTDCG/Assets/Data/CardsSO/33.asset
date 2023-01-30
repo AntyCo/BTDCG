@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Watercraft
+  - name: 42
+    tier: 0
+    secondaryTier: 0

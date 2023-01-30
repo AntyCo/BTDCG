@@ -28,5 +28,9 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Revealio!
   keywordsDesc:
-  - Reveal
-  - Splash
+  - name: 28
+    tier: 0
+    secondaryTier: 0
+  - name: 20
+    tier: 0
+    secondaryTier: 0

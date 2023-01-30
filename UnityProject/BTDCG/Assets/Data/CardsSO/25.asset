@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Snipe 2
+  - name: 33
+    tier: 2
+    secondaryTier: 0

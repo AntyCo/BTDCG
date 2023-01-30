@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - LPP
+  - name: 19
+    tier: 0
+    secondaryTier: 0

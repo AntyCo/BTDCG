@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302d2e9265649a242bc9f5b6e5fd4640, type: 3}
   m_Name: 4
   m_EditorClassIdentifier: 
-  cardName: Juggernaut
+  cardName: Spike-o-pult
   cardId: 4
   cardType: 0
   rarity: 0
@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: Has Balls
   splashText: It has BIG BALLS
   keywordsDesc:
-  - Caramic Buster
+  - name: 6
+    tier: 0
+    secondaryTier: 0

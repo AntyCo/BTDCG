@@ -33,4 +33,6 @@ MonoBehaviour:
     that
     you''ve ever seen'
   keywordsDesc:
-  - Ultravision
+  - name: 40
+    tier: 0
+    secondaryTier: 0

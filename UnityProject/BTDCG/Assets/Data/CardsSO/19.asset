@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Australia's biggest export
   keywordsDesc:
-  - Boomerang 1
+  - name: 4
+    tier: 2
+    secondaryTier: 0

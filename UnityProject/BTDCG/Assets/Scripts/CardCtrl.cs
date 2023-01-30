@@ -9,6 +9,7 @@ public class CardCtrl : MonoBehaviour
     bool infoSet=false;
     public bool ableToBeSelected=false, isSelected=false, upsideDown;
     public int cost, maxHp, atk, clock, hp, banana;
+    public List<KeywordStats> keywords;
     public CardType cardType; public CardTypeSpecific cardTypeSpecific;
     [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT, typeT;
     [SerializeField] GameObject atkI, bananaI, clockI, hpI, a2BScolor, cardBack;
@@ -39,6 +40,17 @@ public class CardCtrl : MonoBehaviour
             else a2BScolor.GetComponent<Image>().color=colorCommon;
         }
 
+        descT.text="";
+            
+        for(int i=0; i<cardOg.keywordsDesc.Count; i++){
+            descT.text+=cardOg.keywordsDesc[i].name;
+            if(cardOg.keywordsDesc[i].tier>0) descT.text+=" "+cardOg.keywordsDesc[i].tier;
+            descT.text+="\r\n";
+        }
+        if(cardOg.bonusDesc.Length>0){
+            descT.text+=cardOg.bonusDesc;
+        }
+
         costT.text=cost+"";
         atkT.text=atk+"";
         bananaT.text=banana+"";
@@ -67,6 +79,7 @@ public class CardCtrl : MonoBehaviour
         maxHp=cardOg.health;
         hp=maxHp;
         banana=cardOg.maxBananas;
+        keywords=cardOg.keywordsDesc;
 
         switch(cardOg.rarity){ //setting rarity color
             case Rarity.Common: {
@@ -131,14 +144,16 @@ public class CardCtrl : MonoBehaviour
         descT.text="";
             
         for(int i=0; i<cardOg.keywordsDesc.Count; i++){
-            descT.text+=cardOg.keywordsDesc[i]+"\r\n";
+            descT.text+=cardOg.keywordsDesc[i].name;
+            if(cardOg.keywordsDesc[i].tier>0) descT.text+=" "+cardOg.keywordsDesc[i].tier;
+            descT.text+="\r\n";
         }
         if(cardOg.bonusDesc.Length>0){
             descT.text+=cardOg.bonusDesc;
         }
         infoSet=true;
 
-        if(!infoSet) return;
+        //if(!infoSet) return;
         costT.text=cost+"";
         atkT.text=atk+"";
         bananaT.text=banana+"";

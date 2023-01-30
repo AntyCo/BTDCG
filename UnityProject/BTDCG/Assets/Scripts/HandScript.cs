@@ -26,7 +26,7 @@ public class HandScript : MonoBehaviour
     }
 
     void Update(){
-        coinText.text=coins+"";
+        coinText.text=coins*100+"";
         hpText.text=heroHp+"";
         if(isPlayers){
             if((Input.mousePosition.y/Screen.height*1080)<rT.anchoredPosition.y+200)

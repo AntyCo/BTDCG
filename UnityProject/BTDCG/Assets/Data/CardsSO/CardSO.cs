@@ -30,7 +30,7 @@ public class CardSO : ScriptableObject
     [Multiline] public string bonusDesc;
     [Multiline] public string splashText;
     //public List<CardKeywords> keywordsList;
-    public List<string> keywordsDesc;
+    [SerializeField] public List<KeywordStats> keywordsDesc;
 
     /*[Header("Below are just Keywords that need an stat")]
     public bool useAtkSplash; public int splash;
@@ -43,4 +43,63 @@ public class CardSO : ScriptableObject
     public List<string> startOfTurn; 
     public List<string> endOfTurn;
     public List<string> whenUpgraded;*/
+}
+
+public enum KeywordsKinds{
+    Bank,
+    BigBoom,
+    BlackHole,
+    Blazing,
+    Boomerang,
+    Camo,
+    Ceramic,
+    CeramicBuster,
+    Discount,
+    DOT,
+    Double,
+    Empower,
+    Feed,
+    Fortibuster,
+    Fortified,
+    Freeze,
+    FrostImmune,
+    Hover,
+    Interest,
+    Leaded,
+    LPP,
+    Magic,
+    MOAB,
+    MOABBuster,
+    MOABSlow,
+    NoGrow,
+    Omegapopper,
+    PrimaryBuff,
+    PurpleImmune,
+    Recover,
+    Reveal,
+    Scattershot,
+    Sentry,
+    ShinobiBuff,
+    Slow,
+    Snipe,
+    Spawn,
+    Speed,
+    SpikeSetter,
+    Splash,
+    SplashImmune,
+    Teleport,
+    Ultravision,
+    Village,
+    Watercraft,
+    WOF,
+};
+
+[System.Serializable]
+public class KeywordStats{
+    public KeywordsKinds name;
+    public int tier, secondaryTier;
+
+    public KeywordStats(){
+
+    }
 }

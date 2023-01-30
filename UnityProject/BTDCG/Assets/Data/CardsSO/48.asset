@@ -28,5 +28,15 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - Snipe 2
-  - Ultravision
+  - name: 33
+    tier: 3
+    secondaryTier: 0
+  - name: 33
+    tier: 3
+    secondaryTier: 0
+  - name: 40
+    tier: 0
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0

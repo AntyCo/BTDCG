@@ -30,4 +30,6 @@ MonoBehaviour:
 
     - Local Bloon hit by Blade'
   keywordsDesc:
-  - Splash
+  - name: 37
+    tier: 0
+    secondaryTier: 0

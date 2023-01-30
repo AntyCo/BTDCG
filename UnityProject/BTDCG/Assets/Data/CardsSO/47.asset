@@ -28,5 +28,9 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - Snipe 1
-  - Splash
+  - name: 33
+    tier: 4
+    secondaryTier: 0
+  - name: 32
+    tier: 1
+    secondaryTier: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   specificType: 1
   image: {fileID: 21300000, guid: fd038ab2646ad1a49b862623f8be718f, type: 3}
   upgradeFrom: {fileID: 11400000, guid: b70477c0d0797924c8b757fee5a9b97a, type: 2}
-  cost: 3
+  cost: 4
   atk: 0
   maxBananas: 2
   clock: 0
@@ -28,6 +28,15 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Snipe 2
-  - Blazing
-  - Splash
+  - name: 33
+    tier: 2
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0
+  - name: 6
+    tier: 0
+    secondaryTier: 0
+  - name: 35
+    tier: 1
+    secondaryTier: 0

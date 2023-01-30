@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - Reveal
-  - Slow 1
-  - Shinobi Buff
+  - name: 28
+    tier: 0
+    secondaryTier: 0
+  - name: 32
+    tier: 1
+    secondaryTier: 0
+  - name: 31
+    tier: 0
+    secondaryTier: 0

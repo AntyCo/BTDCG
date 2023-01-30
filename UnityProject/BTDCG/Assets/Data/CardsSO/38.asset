@@ -28,6 +28,15 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - LPP
-  - Splash
-  - Watercraft
+  - name: 19
+    tier: 0
+    secondaryTier: 0
+  - name: 37
+    tier: 0
+    secondaryTier: 0
+  - name: 42
+    tier: 0
+    secondaryTier: 0
+  - name: 8
+    tier: 1
+    secondaryTier: 0

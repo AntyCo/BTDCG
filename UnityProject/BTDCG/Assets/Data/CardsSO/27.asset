@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Splash
-  - Ultravision
-  - Snipe 2
+  - name: 37
+    tier: 0
+    secondaryTier: 0
+  - name: 40
+    tier: 0
+    secondaryTier: 0
+  - name: 33
+    tier: 2
+    secondaryTier: 0

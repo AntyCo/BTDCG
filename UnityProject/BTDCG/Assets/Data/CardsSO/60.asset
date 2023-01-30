@@ -19,15 +19,21 @@ MonoBehaviour:
   specificType: 2
   image: {fileID: 21300000, guid: fd038ab2646ad1a49b862623f8be718f, type: 3}
   upgradeFrom: {fileID: 11400000, guid: 302434a03c6c6bb4f9a3a389eedf660a, type: 2}
-  cost: 5
+  cost: 4
   atk: 2
-  maxBananas: 4
+  maxBananas: 2
   clock: 0
   health: 0
   typeText: NMUG
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - Slow 1
-  - Ultravision
-  - LPP
+  - name: 32
+    tier: 1
+    secondaryTier: 0
+  - name: 40
+    tier: 0
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0

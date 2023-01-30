@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Snipe 5
-  - Ceranuc Buster
-  - LPP
+  - name: 19
+    tier: 0
+    secondaryTier: 0
+  - name: 6
+    tier: 0
+    secondaryTier: 0
+  - name: 33
+    tier: 5
+    secondaryTier: 0

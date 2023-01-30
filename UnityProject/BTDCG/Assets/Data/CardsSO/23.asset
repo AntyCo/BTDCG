@@ -40,5 +40,9 @@ MonoBehaviour:
     of
     sharks'
   keywordsDesc:
-  - MOAB-Buster
-  - LPP
+  - name: 21
+    tier: 0
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0

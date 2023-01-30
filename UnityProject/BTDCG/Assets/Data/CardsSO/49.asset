@@ -32,4 +32,6 @@ MonoBehaviour:
 
     Yes! It is a plane!'
   keywordsDesc:
-  - Scattershot 1
+  - name: 29
+    tier: 1
+    secondaryTier: 0

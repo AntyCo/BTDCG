@@ -35,4 +35,6 @@ MonoBehaviour:
 
     adequate solution!'
   keywordsDesc:
-  - Slow 1
+  - name: 32
+    tier: 1
+    secondaryTier: 0

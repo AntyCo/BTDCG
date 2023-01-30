@@ -28,7 +28,15 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be upgraded
   keywordsDesc:
-  - Watercraft
-  - Ceramic Buster
-  - Snipe 2
-  - LPP
+  - name: 42
+    tier: 0
+    secondaryTier: 0
+  - name: 6
+    tier: 0
+    secondaryTier: 0
+  - name: 19
+    tier: 0
+    secondaryTier: 0
+  - name: 0
+    tier: 0
+    secondaryTier: 0

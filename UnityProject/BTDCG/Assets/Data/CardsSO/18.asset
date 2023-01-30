@@ -28,4 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Double Boomerang 1
+  - name: 4
+    tier: 1
+    secondaryTier: 0
+  - name: 4
+    tier: 1
+    secondaryTier: 0
+  - name: 21
+    tier: 0
+    secondaryTier: 0

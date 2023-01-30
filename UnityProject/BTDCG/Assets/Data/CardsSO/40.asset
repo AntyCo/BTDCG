@@ -29,6 +29,12 @@ MonoBehaviour:
   splashText: Despite allegations of an illegal helium ring out of the Bonoborbados,
     the MIB claims that theese boats generate revenue by shipping bananas
   keywordsDesc:
-  - Interest 1
-  - Watercraft
-  - Ultravision
+  - name: 17
+    tier: 1
+    secondaryTier: 0
+  - name: 42
+    tier: 0
+    secondaryTier: 0
+  - name: 40
+    tier: 0
+    secondaryTier: 0

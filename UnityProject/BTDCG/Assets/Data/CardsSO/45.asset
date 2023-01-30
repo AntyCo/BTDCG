@@ -30,4 +30,9 @@ MonoBehaviour:
 
     gunners are quite expensive!'
   keywordsDesc:
-  - Double Snipe 1
+  - name: 33
+    tier: 1
+    secondaryTier: 0
+  - name: 33
+    tier: 1
+    secondaryTier: 0

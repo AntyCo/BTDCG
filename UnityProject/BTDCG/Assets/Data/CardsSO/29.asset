@@ -28,4 +28,6 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Hover
+  - name: 16
+    tier: 0
+    secondaryTier: 0

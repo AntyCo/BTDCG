@@ -28,6 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Ultravision
-  - Hover
-  - Slow 1
+  - name: 40
+    tier: 0
+    secondaryTier: 0
+  - name: 16
+    tier: 0
+    secondaryTier: 0
+  - name: 32
+    tier: 1
+    secondaryTier: 0

@@ -28,5 +28,12 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - LPP
-  - Double Splash
+  - name: 19
+    tier: 0
+    secondaryTier: 0
+  - name: 37
+    tier: 0
+    secondaryTier: 0
+  - name: 35
+    tier: 1
+    secondaryTier: 0

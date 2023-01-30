@@ -28,4 +28,9 @@ MonoBehaviour:
   bonusDesc: 
   splashText: Needs to be updated
   keywordsDesc:
-  - Double Snipe 2
+  - name: 33
+    tier: 2
+    secondaryTier: 0
+  - name: 33
+    tier: 2
+    secondaryTier: 0
