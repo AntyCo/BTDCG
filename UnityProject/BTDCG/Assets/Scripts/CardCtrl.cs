@@ -51,16 +51,16 @@ public class CardCtrl : MonoBehaviour
             descT.text+=cardOg.bonusDesc;
         }
 
-        costT.text=cost+"";
+        costT.text=cost*100+"";
         atkT.text=atk+"";
         bananaT.text=banana+"";
         clockT.text=clock+"";
         hpT.text=hp+"";
 
-        if(atk==0) atkI.SetActive(false);
-        if(banana==0) bananaI.SetActive(false);
-        if(clock==0) clockI.SetActive(false);
-        if(hp==0) hpI.SetActive(false);
+        atkI.SetActive(atk!=0);
+        bananaI.SetActive(banana!=0);
+        clockI.SetActive(clock!=0);
+        hpI.SetActive(hp!=0);
 
         cardBack.SetActive(upsideDown);
     }
@@ -154,7 +154,7 @@ public class CardCtrl : MonoBehaviour
         infoSet=true;
 
         //if(!infoSet) return;
-        costT.text=cost+"";
+        costT.text=cost*100+"";
         atkT.text=atk+"";
         bananaT.text=banana+"";
         clockT.text=clock+"";

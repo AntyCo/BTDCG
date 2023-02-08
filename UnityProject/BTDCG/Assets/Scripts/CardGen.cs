@@ -7,13 +7,13 @@ public enum TurnOrder{Upkeep, MainPhaze, EndOfTurn};
 
 public class CardGen : MonoBehaviour
 {
-    //float reload, maxReload=0.5f;
-    [SerializeField] GameObject cardP, dcI, towerDbtn, bloonDbtn, endTurnBtn; // cardP = card prefab, dcI = "draw X cards!" icon, tower/bloon-Dbtn = are draw buttons
-    [SerializeField] Text dcT; // dcI text
-    [SerializeField] Transform pHand, oHand; // player's/opponent's hand's transform
-    public List<CardSO> possibleCards; // list of all possible cards in database - not used, but dont delete
-    public HandScript playersHand, opponentsHand; // player's/opponent's hand script
-    public int cards2Draw, opCards2Draw; // how many cards to draw
+    //okay, time to clean up the code a bit
+    [SerializeField] GameObject cardP, dcI, towerDbtn, bloonDbtn, endTurnBtn; // cardP = card prefab, dcI = draw card Icon, xDbtn = draw buttons from both decks
+    [SerializeField] Text dcT; // draw card Text
+    [SerializeField] Transform pHand, oHand; // player's and opponet's hands
+    public List<CardSO> possibleCards; // card database
+    public HandScript playersHand, opponentsHand; // connections to hands of both players
+    public int cards2Draw, opCards2Draw; // how many cards need to be drawn
     bool isOpponentDrawingRn=false;
 
     public int currentTurn, currentTurnStage; public TurnOrder turnOrder; // Turn stuff
@@ -28,6 +28,7 @@ public class CardGen : MonoBehaviour
         Screen.SetResolution(1920, 1080, true);
         currentTurn=0; currentTurnStage=0; turnOrder=TurnOrder.EndOfTurn; isPlayersTurnNow=doesPlayerStart;
         cards2Draw=4; opCards2Draw=4;
+        for(int i=1; i<=4; i++) GiveCard(i);
     }
 
     void Update(){
@@ -47,7 +48,7 @@ public class CardGen : MonoBehaviour
             //for(int i=0; i<10; i++) Debug.Log(Random.Range(0,2));
             doesPlayerStart=true;
             isPlayersTurnNow=doesPlayerStart;
-            turnOrder=TurnOrder.Upkeep; currentTurnStage=1; 
+            turnOrder=TurnOrder.Upkeep; currentTurnStage=1;
         }
 
         if(cards2Draw==0 && opCards2Draw==0){
@@ -156,7 +157,7 @@ public class CardGen : MonoBehaviour
                                 selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
                                 /*if(selectedLine.playersCard.Count>0) selectedLine.playersCard[0].transform.position=selectedLine.playersSpawn.transform.position + new Vector3(0, 20, 0);*/
                                 selectedLine.playersCard.Add(selectedCard);
-                                selectedCard.curPCard=selectedCard;
+                                selectedLine.curPCard=selectedCard;
                                 playersHand.coins-=selectedCard.cost;
 
                                 selectedCard.transform.localScale=new Vector2(0.25f,0.25f);
@@ -169,7 +170,7 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 106: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Ultravision;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
@@ -183,7 +184,7 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 109: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Fortibuster;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
@@ -191,54 +192,54 @@ public class CardGen : MonoBehaviour
                                     case 111: {
                                         bool canDestroy=true;
                                         for(int i=0; i<selectedLine.curPCard.keywords.Count; i++){
-                                            if(selectedLine.curPCard.keywords[i]==KeywordsKinds.PurpleImmune) canDestroy=false;
+                                            if(selectedLine.curPCard.keywords[i].name==KeywordsKinds.PurpleImmune) canDestroy=false;
                                         }
                                         if(canDestroy) selectedLine.DiscardAll(true, playersHand);
                                         canDestroy=true;
                                         for(int i=0; i<selectedLine.curOCard.keywords.Count; i++){
-                                            if(selectedLine.curOCard.keywords[i]==KeywordsKinds.PurpleImmune) canDestroy=false;
+                                            if(selectedLine.curOCard.keywords[i].name==KeywordsKinds.PurpleImmune) canDestroy=false;
                                         }
                                         if(canDestroy) selectedLine.DiscardAll(false, opponentsHand);
                                         break;
                                     }
                                     case 114: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Blazing;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }
                                     case 115: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Camo;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }
                                     case 116: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Fortified;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }
                                     case 117: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.FrostImmune;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }
                                     case 118: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.FrostImmune;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }
                                     case 119: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.PurpleImmune;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }
                                     case 120: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Freeze;
                                         kS.tier = 1;
                                         selectedLine.curPCard.keywords.Add(kS);
@@ -249,7 +250,7 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 122: {
-                                        KeywordStats kS = new();
+                                        KeywordStats kS = new KeywordStats();
                                         kS.name = KeywordsKinds.Recover;
                                         kS.tier = 1;
                                         selectedLine.curPCard.keywords.Add(kS);

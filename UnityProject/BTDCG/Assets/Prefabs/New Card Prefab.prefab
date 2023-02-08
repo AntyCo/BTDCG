@@ -280,7 +280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -205, y: 345}
+  m_AnchoredPosition: {x: -200, y: 345}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &889962377420741586
@@ -313,8 +313,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 47f3c2d44aba82549b5d65e7b1a664c9, type: 3}
-    m_FontSize: 60
-    m_FontStyle: 1
+    m_FontSize: 40
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 64
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 200
 --- !u!114 &889962377420741588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1065,7 @@ MonoBehaviour:
   cardOg: {fileID: 0}
   handOwner: {fileID: 0}
   cardGen: {fileID: 0}
+  lineItIsOn: {fileID: 0}
   ableToBeSelected: 0
   isSelected: 0
   upsideDown: 0
@@ -1074,6 +1075,7 @@ MonoBehaviour:
   clock: 0
   hp: 0
   banana: 0
+  keywords: []
   cardType: 0
   cardTypeSpecific: 0
   nameT: {fileID: 889962377968188526}

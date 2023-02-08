@@ -17,7 +17,7 @@ MonoBehaviour:
   cardType: 0
   rarity: 0
   specificType: 0
-  image: {fileID: 21300000, guid: d3c3c79a8bcc4ce438a2c21c7e513b9e, type: 3}
+  image: {fileID: 21300000, guid: 213b04524080aab439c479768b3bcaa5, type: 3}
   upgradeFrom: {fileID: 11400000, guid: 7908d33e1724cee47bc9acb7d1e5140b, type: 2}
   cost: 2
   atk: 2
@@ -25,7 +25,7 @@ MonoBehaviour:
   clock: 0
   health: 0
   typeText: DMUG
-  bonusDesc: Has Balls
+  bonusDesc: 
   splashText: It has BIG BALLS
   keywordsDesc:
   - name: 6
