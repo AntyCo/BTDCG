@@ -424,6 +424,8 @@ MonoBehaviour:
   cardGen: {fileID: 1031969735}
   playersCard: []
   opponentsCard: []
+  curPCard: {fileID: 0}
+  curOCard: {fileID: 0}
   playersSpawn: {fileID: 1673829100}
   opponentsSpawn: {fileID: 160572534}
   button: {fileID: 1929436580}
@@ -652,6 +654,8 @@ MonoBehaviour:
   cardGen: {fileID: 1031969735}
   playersCard: []
   opponentsCard: []
+  curPCard: {fileID: 0}
+  curOCard: {fileID: 0}
   playersSpawn: {fileID: 1975805088}
   opponentsSpawn: {fileID: 530230474}
   button: {fileID: 1997865381}
@@ -1660,6 +1664,8 @@ MonoBehaviour:
   cardGen: {fileID: 1031969735}
   playersCard: []
   opponentsCard: []
+  curPCard: {fileID: 0}
+  curOCard: {fileID: 0}
   playersSpawn: {fileID: 1305729772}
   opponentsSpawn: {fileID: 1167910388}
   button: {fileID: 1069109549}
@@ -3170,7 +3176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec44b9b84fd5e1419847b7a2b60d816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedDeck: {fileID: 11400000, guid: 85f95250d1bde9146b15015cb523f86d, type: 2}
+  selectedDeck: {fileID: 11400000, guid: 3213e0316eb75d9479085a910e650035, type: 2}
   deck:
   - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
   - {fileID: 11400000, guid: ad28db49e309e4c4aa936cb96593bf7b, type: 2}
@@ -3474,6 +3480,8 @@ MonoBehaviour:
   cardGen: {fileID: 1031969735}
   playersCard: []
   opponentsCard: []
+  curPCard: {fileID: 0}
+  curOCard: {fileID: 0}
   playersSpawn: {fileID: 1313542786}
   opponentsSpawn: {fileID: 471037418}
   button: {fileID: 1086753225}
@@ -4131,6 +4139,8 @@ MonoBehaviour:
   cardGen: {fileID: 1031969735}
   playersCard: []
   opponentsCard: []
+  curPCard: {fileID: 0}
+  curOCard: {fileID: 0}
   playersSpawn: {fileID: 256862202}
   opponentsSpawn: {fileID: 1875548590}
   button: {fileID: 1049542503}

@@ -228,7 +228,7 @@ public class CardGen : MonoBehaviour
                                     }
                                     case 118: {
                                         KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.FrostImmune;
+                                        kS.name = KeywordsKinds.SplashImmune;
                                         selectedLine.curPCard.keywords.Add(kS);
                                         break;
                                     }

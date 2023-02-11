@@ -24,7 +24,7 @@ public class LineScript : MonoBehaviour
                 }
                 else if(cardGen.selectedCard.cardType==CardType.support){
                     switch(cardGen.selectedCard.cardOg.cardId){
-                        case 104: case 105: case 106: case 107: case 109: case 114: {
+                        case 104: case 105: case 106: case 107: case 109: case 114: case 120: case 122: {
                             if(playersCard.Count>0){
                                 shouldShow=curPCard.cardType==CardType.tower;
                                 switch(cardGen.selectedCard.cardOg.cardId){
@@ -34,11 +34,25 @@ public class LineScript : MonoBehaviour
                                         }
                                         break;
                                     }
+                                    case 120: {
+                                        for(int i=0; i<curPCard.keywords.Count; i++){
+                                            if(curPCard.keywords[i].name==KeywordsKinds.Blazing) shouldShow=false;
+                                        }
+                                        break;
+                                    }
                                     default: break;
                                 }
                             } else shouldShow=false;
                             break;
                         }
+                        
+                        case 115: case 116: case 117: case 118: case 119: {
+                            if(playersCard.Count>0){
+                                shouldShow=curPCard.cardType==CardType.bloon;
+                            } else shouldShow=false;
+                            break;
+                        }
+                        
                         default: {
                             break;
                         }
