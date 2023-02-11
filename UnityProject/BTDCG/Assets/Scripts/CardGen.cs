@@ -28,7 +28,7 @@ public class CardGen : MonoBehaviour
         Screen.SetResolution(1920, 1080, true);
         currentTurn=0; currentTurnStage=0; turnOrder=TurnOrder.EndOfTurn; isPlayersTurnNow=doesPlayerStart;
         cards2Draw=4; opCards2Draw=4;
-        for(int i=1; i<=4; i++) GiveCard(i);
+        //for(int i=1; i<=4; i++) GiveCard(i);
     }
 
     void Update(){
@@ -170,9 +170,7 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 106: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Ultravision;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.Ultravision);
                                         break;
                                     }
                                     case 107: {
@@ -184,9 +182,7 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 109: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Fortibuster;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.Fortibuster);
                                         break;
                                     }
                                     case 111: {
@@ -203,46 +199,31 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 114: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Blazing;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.Blazing);
                                         break;
                                     }
                                     case 115: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Camo;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.Camo);
                                         break;
                                     }
                                     case 116: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Fortified;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.Fortified);
                                         break;
                                     }
                                     case 117: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.FrostImmune;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.FrostImmune);
                                         break;
                                     }
                                     case 118: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.SplashImmune;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.SplashImmune);
                                         break;
                                     }
                                     case 119: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.PurpleImmune;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeyword(KeywordsKinds.PurpleImmune);
                                         break;
                                     }
                                     case 120: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Freeze;
-                                        kS.tier = 1;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeywordChangeValues(KeywordsKinds.Freeze, 1, 0);
                                         break;
                                     }
                                     case 121: {
@@ -250,10 +231,7 @@ public class CardGen : MonoBehaviour
                                         break;
                                     }
                                     case 122: {
-                                        KeywordStats kS = new KeywordStats();
-                                        kS.name = KeywordsKinds.Recover;
-                                        kS.tier = 1;
-                                        selectedLine.curPCard.keywords.Add(kS);
+                                        AddKeywordChangeValues(KeywordsKinds.Recover, 1, 0);
                                         break;
                                     }
                                 }
@@ -280,6 +258,33 @@ public class CardGen : MonoBehaviour
         }
 
         endTurnBtn.SetActive(turnOrder==TurnOrder.MainPhaze && cards2Draw==0 && opCards2Draw==0 && isPlayersTurnNow);
+    }
+
+    void AddKeyword(KeywordsKinds kK){
+        KeywordStats kS = new KeywordStats();
+        kS.name = kK;
+        selectedLine.curPCard.keywords.Add(kS);
+    }
+
+    void AddKeywordChangeValues(KeywordsKinds kK, int t1, int t2){
+        List<KeywordStats> cardKSlist = selectedLine.curPCard.keywords;
+        bool isThere=false; int i;
+        for(i=0; i<cardKSlist.Count; i++){
+            if(cardKSlist[i].name==kK){
+                isThere=true;
+                break;
+                }
+            }
+        if(isThere){
+            cardKSlist[i].tier+=t1;
+            cardKSlist[i].secondaryTier+=t2;
+        }else{
+            KeywordStats kS = new KeywordStats();
+            kS.name = KeywordsKinds.Recover;
+            kS.tier=t1;
+            kS.secondaryTier=t2;
+            selectedLine.curPCard.keywords.Add(kS);
+        }
     }
 
     public void GiveCard(int id){

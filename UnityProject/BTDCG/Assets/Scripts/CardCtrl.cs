@@ -42,9 +42,9 @@ public class CardCtrl : MonoBehaviour
 
         descT.text="";
             
-        for(int i=0; i<cardOg.keywordsDesc.Count; i++){
-            descT.text+=cardOg.keywordsDesc[i].name;
-            if(cardOg.keywordsDesc[i].tier>0) descT.text+=" "+cardOg.keywordsDesc[i].tier;
+        for(int i=0; i<keywords.Count; i++){
+            descT.text+=keywords[i].name;
+            if(keywords[i].tier>0) descT.text+=" "+keywords[i].tier;
             descT.text+="\r\n";
         }
         if(cardOg.bonusDesc.Length>0){
@@ -79,7 +79,14 @@ public class CardCtrl : MonoBehaviour
         maxHp=cardOg.health;
         hp=maxHp;
         banana=cardOg.maxBananas;
-        keywords=cardOg.keywordsDesc;
+        //keywords=cardOg.keywordsDesc;
+        for(int i=0; i<cardOg.keywordsDesc.Count; i++){
+            KeywordStats kS = new KeywordStats();
+            kS.name=cardOg.keywordsDesc[i].name;
+            kS.tier=cardOg.keywordsDesc[i].tier;
+            kS.secondaryTier=cardOg.keywordsDesc[i].secondaryTier;
+            keywords.Add(kS);
+        }
 
         switch(cardOg.rarity){ //setting rarity color
             case Rarity.Common: {
@@ -143,9 +150,9 @@ public class CardCtrl : MonoBehaviour
 
         descT.text="";
             
-        for(int i=0; i<cardOg.keywordsDesc.Count; i++){
-            descT.text+=cardOg.keywordsDesc[i].name;
-            if(cardOg.keywordsDesc[i].tier>0) descT.text+=" "+cardOg.keywordsDesc[i].tier;
+        for(int i=0; i<keywords.Count; i++){
+            descT.text+=keywords[i].name;
+            if(keywords[i].tier>0) descT.text+=" "+keywords[i].tier;
             descT.text+="\r\n";
         }
         if(cardOg.bonusDesc.Length>0){
