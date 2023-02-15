@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Gorilla Strenght Potion
   cardId: 107
-  cardType: 2
+  cardType: 0
+  supportType: 1
   rarity: 0
   specificType: 5
   image: {fileID: 21300000, guid: a74f025db8be66f44b139f1b346af308, type: 3}

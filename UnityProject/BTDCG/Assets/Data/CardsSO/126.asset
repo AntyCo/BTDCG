@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Monke Pox Curse
   cardId: 126
-  cardType: 2
+  cardType: 1
+  supportType: 2
   rarity: 2
   specificType: 5
   image: {fileID: 21300000, guid: 2e7c5433ef4d5494cad26be60bca2898, type: 3}

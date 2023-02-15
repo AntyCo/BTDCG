@@ -152,7 +152,7 @@ public class CardGen : MonoBehaviour
                 case TurnOrder.MainPhaze: {
                     if(isPlayersTurnNow){
                         if(selectedCard!=null && selectedLine!=null){
-                            if(selectedCard.cardType!=CardType.support){
+                            if(selectedCard.supportType==SupportType.none){
                                 selectedCard.transform.SetParent(selectedLine.playersSpawn.transform);
                                 selectedCard.transform.position=selectedLine.playersSpawn.transform.position;
                                 /*if(selectedLine.playersCard.Count>0) selectedLine.playersCard[0].transform.position=selectedLine.playersSpawn.transform.position + new Vector3(0, 20, 0);*/

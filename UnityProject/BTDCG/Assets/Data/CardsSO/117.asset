@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Anti-Freeze Coating
   cardId: 117
-  cardType: 2
+  cardType: 1
+  supportType: 2
   rarity: 1
   specificType: 6
   image: {fileID: 21300000, guid: fd038ab2646ad1a49b862623f8be718f, type: 3}

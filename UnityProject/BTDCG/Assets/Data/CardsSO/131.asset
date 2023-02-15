@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Blue Bloon Rush!
   cardId: 131
-  cardType: 2
+  cardType: 1
+  supportType: 1
   rarity: 2
   specificType: 6
   image: {fileID: 21300000, guid: de7d5643626b0d847aa74a917d516c8b, type: 3}

@@ -19,10 +19,10 @@ public class LineScript : MonoBehaviour
             shouldShow=cardGen.selectedLine==null && cardGen.isPlayersTurnNow;
             
             if(cardGen.isPlayersTurnNow){
-                if(cardGen.selectedCard.cardType!=CardType.support && playersCard.Count>0){
+                if(cardGen.selectedCard.supportType==SupportType.none && playersCard.Count>0){
                     shouldShow=(playersCard[0].cardOg==cardGen.selectedCard.cardOg.upgradeFrom);
                 }
-                else if(cardGen.selectedCard.cardType==CardType.support){
+                else if(cardGen.selectedCard.supportType!=SupportType.none){
                     switch(cardGen.selectedCard.cardOg.cardId){
                         case 104: case 105: case 106: case 107: case 109: case 114: case 120: case 122: {
                             if(playersCard.Count>0){

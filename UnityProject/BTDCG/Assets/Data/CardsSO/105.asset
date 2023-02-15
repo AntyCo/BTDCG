@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: One with the Banana
   cardId: 105
-  cardType: 2
+  cardType: 0
+  supportType: 1
   rarity: 1
   specificType: 5
   image: {fileID: 21300000, guid: 0de0dfd5a82615d4ab1a4b47608d7d6f, type: 3}

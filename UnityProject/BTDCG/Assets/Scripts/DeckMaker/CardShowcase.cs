@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardCtrl : MonoBehaviour
+public class CardShowcase : MonoBehaviour
 {
-    public CardSO cardOg; public HandScript handOwner; public CardGen cardGen; public LineScript lineItIsOn;
+    public CardSO cardOg;
+    public int ammount;
     bool infoSet=false;
-    public bool ableToBeSelected=false, isSelected=false, upsideDown;
+    public bool ableToBeSelected=false, isSelected=false;
     public int cost, maxHp, atk, clock, hp, banana;
     public List<KeywordStats> keywords;
-    public CardType cardType; public SupportType supportType; public CardTypeSpecific cardTypeSpecific;
-    [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT, typeT;
+    public CardType cardType; public CardTypeSpecific cardTypeSpecific;
+    [SerializeField] Text nameT, costT, atkT, bananaT, clockT, hpT, descT, splashT, typeT, ammountT;
     [SerializeField] GameObject atkI, bananaI, clockI, hpI, a2BScolor, cardBack;
     [SerializeField] Image bgImage, cardImage, rarityImage;
     [SerializeField] Color colorCommon, colorRare, colorEpic, colorLegendary, catPrimary, catMilitary, catSupport, catMagic, bloons, tSupport, bSupport, hero;
@@ -19,7 +20,7 @@ public class CardCtrl : MonoBehaviour
     void Update(){
         if(!infoSet) return;
 
-        ableToBeSelected=true;
+        /*ableToBeSelected=true;
         if(cardOg.upgradeFrom!=null){
             ableToBeSelected=false;
             for(int i=0; i<cardGen.lines.Count; i++){
@@ -38,7 +39,7 @@ public class CardCtrl : MonoBehaviour
         if(ableToBeSelected || isSelected){
             if(isSelected) a2BScolor.GetComponent<Image>().color=colorLegendary;
             else a2BScolor.GetComponent<Image>().color=colorCommon;
-        }
+        }*/
 
         descT.text="";
             
@@ -56,19 +57,17 @@ public class CardCtrl : MonoBehaviour
         bananaT.text=banana+"";
         clockT.text=clock+"";
         hpT.text=hp+"";
+        ammountT.text=ammount+"";
 
         atkI.SetActive(atk!=0);
         bananaI.SetActive(banana!=0);
         clockI.SetActive(clock!=0);
         hpI.SetActive(hp!=0);
 
-        cardBack.SetActive(upsideDown);
+        cardBack.SetActive(ammount==0);
     }
 
-    public void SetCardData(HandScript hO, bool spawnUD, CardGen cardG){
-        cardGen=cardG;
-        upsideDown = spawnUD;
-        handOwner=hO;
+    public void SetCardData(){
         nameT.text=cardOg.cardName;
         splashT.text=cardOg.splashText;
         typeT.text=cardOg.typeText;
@@ -107,7 +106,6 @@ public class CardCtrl : MonoBehaviour
             }
         }
         cardType=cardOg.cardType;
-        supportType=cardOg.supportType;
         cardTypeSpecific=cardOg.specificType;
 
         switch(cardOg.specificType){ //setting backgrounds as card types (specific)
@@ -163,31 +161,18 @@ public class CardCtrl : MonoBehaviour
         bananaT.text=banana+"";
         clockT.text=clock+"";
         hpT.text=hp+"";
+        ammountT.text=ammount+"";
 
         if(atk==0) atkI.SetActive(false);
         if(banana==0) bananaI.SetActive(false);
         if(clock==0) clockI.SetActive(false);
         if(hp==0) hpI.SetActive(false);
 
-        cardBack.SetActive(upsideDown);
+        cardBack.SetActive(ammount==0);
     }
 
     public void Selected(){
         Debug.Log("Click!");
-        if(ableToBeSelected || isSelected) isSelected=!isSelected;
-        if(isSelected) cardGen.selectedCard=this;
-        else cardGen.selectedCard=null;
-    }
-
-    public void Discard(){
-        for(int i=0; i<handOwner.cardsInHand.Count; i++){
-            if(handOwner.cardsInHand[i]==this) handOwner.cardsInHand.RemoveAt(i);
-        }
-        if(cardTypeSpecific == CardTypeSpecific.bloons || cardTypeSpecific == CardTypeSpecific.bSupport){
-            handOwner.bloonDiscard.Add(cardOg);
-        } else{
-            handOwner.discard.Add(cardOg);
-        }
-        Destroy(this.gameObject);
+        //if(ableToBeSelected || isSelected) isSelected=!isSelected;
     }
 }

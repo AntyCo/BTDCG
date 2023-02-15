@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum CardType{tower, bloon, support};
+public enum CardType{tower, bloon};
+public enum SupportType{none, normal, quickplay};
 //public enum CardKeywords{Ultravision, LPP, Splash, Blazing, Slow, Freeze, DOT, Boomerang, BigBoom};
 public enum Rarity{Common, Rare, Epic, Legendary};
-public enum CardTypeSpecific{primary, military, magic, support, bloons, tSupport, bSupport, oSupport, hero};
+public enum CardTypeSpecific{primary, military, magic, support, bloons, tSupport, bSupport, hero};
 
 [CreateAssetMenu(fileName="New Card", menuName="Cards/New Card")]
 public class CardSO : ScriptableObject
@@ -15,6 +16,7 @@ public class CardSO : ScriptableObject
     public int cardId;
     //[Multiline] public string description;
     public CardType cardType;
+    public SupportType supportType;
     public Rarity rarity;
     public CardTypeSpecific specificType;
     public Sprite image;
