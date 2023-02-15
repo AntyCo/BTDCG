@@ -4,7 +4,7 @@ using UnityEngine;
 
 //public enum DeckType{Tower, Bloon};
 
-[CreateAssetMenu(fileName="New Deck", menuName="Cards/New Deck")]
+[CreateAssetMenu(fileName="New Deck", menuName="Cards/Decks/New Deck")]
 public class DeckSO : ScriptableObject
 {
     public string deckName;
